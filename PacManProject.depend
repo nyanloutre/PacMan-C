@@ -117,13 +117,14 @@
 	<stdio.h>
 	<stdlib.h>
 
-1400838875 source:d:\documents\github\pacman-c\affichage.c
+1400842499 source:d:\documents\github\pacman-c\affichage.c
 	<windows.h>
+	"symboles.h"
 
 1400838875 source:d:\documents\github\pacman-c\betterlook.c
 	"symboles.h"
 
-1400838875 d:\documents\github\pacman-c\symboles.h
+1400842695 d:\documents\github\pacman-c\symboles.h
 
 1400838875 source:d:\documents\github\pacman-c\deplacements.c
 	"structures.h"

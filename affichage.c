@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "symboles.h"
 
 void affichage(char terrain[20][38], int score)
 {
@@ -12,8 +13,15 @@ void affichage(char terrain[20][38], int score)
     {
         for(j=0; j<38; j++)
         {
+            if(terrain[i][j]=='C')
+            {
+                printf("%c", smiley);
+            }
+            else
+            {
+                printf("%c", terrain[i][j]); //On affiche le terrain
+            }
 
-            printf("%c", terrain[i][j]); //On affiche le terrain
 
         }
 
