@@ -47,9 +47,6 @@
 		<Unit filename="deplacementsfantomes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="entreclavier.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="generation.c">
 			<Option compilerVar="CC" />
 		</Unit>
