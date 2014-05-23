@@ -9,6 +9,7 @@
 #include "structures.h"
 #include "deplacementfantomes.h"
 #include "betterlook.h"
+#include "setwindow.h"
 
 
 int main()
@@ -21,10 +22,7 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SMALL_RECT WinRect = {0, 0, 37, 24}; //On définit un rectangle pour la fenêtre
-    SMALL_RECT* WinSize = &WinRect; //Il est nécessaire de créer un pointeur pour cette fonction
-
-    SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), 1, WinSize); //On définit la taille de la console suivant le rectangle
+    SetWindow(86,24);
 
     srand(time(NULL));
 
