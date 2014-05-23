@@ -10,10 +10,10 @@ void fscore(int scorePlayer)
     do
     {
         gets(name);
-    }while (strlen(name)==3);
+    }while (strlen(name)!=3);
 
     printf("\nVotre score : %d\n", scorePlayer);
     inscriptionScore(name, scorePlayer);
-    //lectureScore(pseudo, score);
-
+    lectureScore(pseudo, score);
+    triScore(pseudo, score);
 }
