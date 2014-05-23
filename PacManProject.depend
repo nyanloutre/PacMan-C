@@ -113,7 +113,18 @@
 
 1400332472 source:c:\users\victor\documents\github\pacman-c\triscore.c
 
-1400839423 source:c:\users\victor\documents\github\pacman-c\inscriptionscore.c
+1400840716 source:c:\users\victor\documents\github\pacman-c\inscriptionscore.c
 	<stdio.h>
 	<stdlib.h>
+
+1400839423 source:c:\users\victor\documents\github\pacman-c\tableaudesscores.c
+	<stdio.h>
+	<stdlib.h>
+
+1400842871 source:c:\users\victor\documents\github\pacman-c\lecturescore.c
+	<stdio.h>
+	<stdlib.h>
+
+1400842599 source:c:\users\victor\documents\github\pacman-c\score.c
+	<string.h>
 
