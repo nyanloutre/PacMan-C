@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "symboles.h"
 
 void affichage(char terrain[20][38], int score)
 {
