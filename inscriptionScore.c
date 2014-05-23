@@ -7,9 +7,9 @@ void inscriptionScore(char name[],int score)
     sauv = fopen("score.txt", "a");
     if (sauv != NULL)
     {
-        //execution du code dans le cas où il n'y a pas d'erreur
+                                                    //execution du code dans le cas où il n'y a pas d'erreur
         printf("%s", name);
-        fprintf(sauv, "%s %d\n", name, score);
+        fprintf(sauv, "%s %d\n", name, score);      //ecriture du score dans le fichier
         fclose(sauv);
     }
     else

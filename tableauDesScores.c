@@ -3,13 +3,13 @@
 
 void tableauDesScores(int score)
 {
-
+    //
     FILE* sauv;
     char nom[3], t_nom[3][100], t_score[100];
     char lecture;
     int i=0, j=0, place;
 
-    sauv = fopen("score.txt", "a");
+    sauv = fopen("score.txt", "r");
 
     if (sauv == NULL)
     {
@@ -25,7 +25,7 @@ void tableauDesScores(int score)
             t_nom[1][i] = lecture;
 
             fgets(lecture, 3,sauv);
-            t_score[i] = atoi(lecture);         //conversion nombre
+            t_score[i] = atoi(lecture);         //conversion caractère en nombre
             i++;
         }
 

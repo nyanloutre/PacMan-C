@@ -9,6 +9,6 @@ void fscore(int scorePlayer)
 
     printf("\nVotre score : %d\n", scorePlayer);
     inscriptionScore(name, scorePlayer);
-    //lectureScore(pseudo, score);
+    lectureScore(pseudo, score);
 
 }
