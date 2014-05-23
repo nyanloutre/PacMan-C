@@ -117,3 +117,66 @@
 	<stdio.h>
 	<stdlib.h>
 
+1400838875 source:d:\documents\github\pacman-c\affichage.c
+	<windows.h>
+
+1400838875 source:d:\documents\github\pacman-c\betterlook.c
+	"symboles.h"
+
+1400838875 d:\documents\github\pacman-c\symboles.h
+
+1400838875 source:d:\documents\github\pacman-c\deplacements.c
+	"structures.h"
+	"score.h"
+	<windows.h>
+
+1400838875 d:\documents\github\pacman-c\structures.h
+
+1400838875 d:\documents\github\pacman-c\score.h
+
+1400838875 source:d:\documents\github\pacman-c\deplacementsfantomes.c
+	"structures.h"
+
+1400838875 source:d:\documents\github\pacman-c\generation.c
+	"structures.h"
+
+1400839536 source:d:\documents\github\pacman-c\inscriptionscore.c
+	<stdio.h>
+	<stdlib.h>
+
+1400838875 source:d:\documents\github\pacman-c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"generation.h"
+	"deplacement.h"
+	"affichage.h"
+	"structures.h"
+	"deplacementfantomes.h"
+	"betterlook.h"
+
+1400838875 d:\documents\github\pacman-c\generation.h
+	"structures.h"
+
+1400838875 d:\documents\github\pacman-c\deplacement.h
+
+1400838875 d:\documents\github\pacman-c\affichage.h
+
+1400838875 d:\documents\github\pacman-c\deplacementfantomes.h
+
+1400838875 d:\documents\github\pacman-c\betterlook.h
+
+1400838875 source:d:\documents\github\pacman-c\triscore.c
+
+1400840954 source:d:\documents\github\pacman-c\lecturescore.c
+	<stdio.h>
+	<stdlib.h>
+
+1400840954 source:d:\documents\github\pacman-c\score.c
+	<string.h>
+
+1400839536 source:d:\documents\github\pacman-c\tableaudesscores.c
+	<stdio.h>
+	<stdlib.h>
+
