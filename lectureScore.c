@@ -6,7 +6,7 @@ void lectureScore(char *pseudo[], int score[])
     FILE* sauv = NULL;
     sauv = fopen("score.txt", "r");
 
-
+    char *lecture;
     int i=0;
 
     if (sauv != NULL)
@@ -15,9 +15,9 @@ void lectureScore(char *pseudo[], int score[])
         fseek(sauv, 0, SEEK_SET);
         while (!feof(sauv))
         {
-            printf("%d\t", i);
-            fscanf(sauv, "%s %d\n", &pseudo[i], &score[i]);
+            fgets(lecture, 4, sauv);
             i++;
+            pseudo[i]=lecture;
         }
 
         /*while (fgets(lecture, 3, sauv)!=NULL)
