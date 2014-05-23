@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PacManProject" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PacManProject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PacManProject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="affichage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="affichage.h" />
+		<Unit filename="betterlook.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="betterlook.h" />
+		<Unit filename="deplacement.h" />
+		<Unit filename="deplacementfantomes.h" />
+		<Unit filename="deplacements.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="deplacementsfantomes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entreclavier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="generation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="generation.h" />
+		<Unit filename="inscriptionScore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="inscriptionScore.h" />
+		<Unit filename="lectureScore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lectureScore.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="score.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="score.h" />
+		<Unit filename="structures.h" />
+		<Unit filename="symboles.h" />
+		<Unit filename="tableauDesScores.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tableauDesScores.h" />
+		<Unit filename="triScore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="triScore.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

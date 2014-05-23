@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1400396114 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\affichage.c
+	<windows.h>
+
+1400395642 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\betterlook.c
+	"symboles.h"
+
+1400313044 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\symboles.h
+
+1400392764 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\deplacementsfantomes.c
+	"structures.h"
+
+1400051150 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\structures.h
+
+1400316682 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\entreclavier.c
+
+1400393882 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\generation.c
+	"structures.h"
+
+1400836908 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\inscriptionscore.c
+	<stdio.h>
+	<stdlib.h>
+
+1400324819 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\lecturescore.c
+	<stdio.h>
+	<stdlib.h>
+
+1400396198 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"generation.h"
+	"deplacement.h"
+	"affichage.h"
+	"structures.h"
+	"deplacementfantomes.h"
+	"betterlook.h"
+
+1400051588 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\generation.h
+	"structures.h"
+
+1400056032 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\deplacement.h
+
+1400395948 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\affichage.h
+
+1400311382 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\deplacementfantomes.h
+
+1400314998 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\betterlook.h
+
+1400837487 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\score.c
+
+1400837438 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\tableaudesscores.c
+	<stdio.h>
+	<stdlib.h>
+
+1400332472 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\triscore.c
+
+1400836753 source:c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\deplacements.c
+	"structures.h"
+	"score.h"
+	<windows.h>
+
+1400522677 c:\users\victor\skydrive\utbm\tc02\if12\_pacman project\build\pacmanproject\score.h
+
