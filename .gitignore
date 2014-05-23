@@ -25,3 +25,7 @@
 # CodeBlocks files
 *.layout
 *.depend
+
+# Fichiers spécifiques au projet
+
+score.txt
