@@ -23,15 +23,8 @@ int main()
 
     SMALL_RECT WinRect = {0, 0, 37, 24}; //On définit un rectangle pour la fenêtre
     SMALL_RECT* WinSize = &WinRect; //Il est nécessaire de créer un pointeur pour cette fonction
-    /*COORD taille;
-    CONSOLE_FONT_INFO font;*/
 
     SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), 1, WinSize); //On définit la taille de la console suivant le rectangle
-    /*taille.X = 20;
-    taille.Y = 20;
-    font.dwFontSize = taille;
-    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), 0, &font);*/
-
 
     srand(time(NULL));
 
