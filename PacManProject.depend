@@ -117,14 +117,14 @@
 	<stdio.h>
 	<stdlib.h>
 
-1400842499 source:d:\documents\github\pacman-c\affichage.c
+1400843098 source:d:\documents\github\pacman-c\affichage.c
 	<windows.h>
 	"symboles.h"
 
 1400838875 source:d:\documents\github\pacman-c\betterlook.c
 	"symboles.h"
 
-1400842695 d:\documents\github\pacman-c\symboles.h
+1400843629 d:\documents\github\pacman-c\symboles.h
 
 1400838875 source:d:\documents\github\pacman-c\deplacements.c
 	"structures.h"
@@ -141,7 +141,7 @@
 1400838875 source:d:\documents\github\pacman-c\generation.c
 	"structures.h"
 
-1400839536 source:d:\documents\github\pacman-c\inscriptionscore.c
+1400843116 source:d:\documents\github\pacman-c\inscriptionscore.c
 	<stdio.h>
 	<stdlib.h>
 
@@ -170,11 +170,11 @@
 
 1400838875 source:d:\documents\github\pacman-c\triscore.c
 
-1400840954 source:d:\documents\github\pacman-c\lecturescore.c
+1400843116 source:d:\documents\github\pacman-c\lecturescore.c
 	<stdio.h>
 	<stdlib.h>
 
-1400840954 source:d:\documents\github\pacman-c\score.c
+1400843116 source:d:\documents\github\pacman-c\score.c
 	<string.h>
 
 1400839536 source:d:\documents\github\pacman-c\tableaudesscores.c

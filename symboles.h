@@ -13,6 +13,5 @@
 #define t_dro (char)0xCC //T vers la droite
 #define croix (char)0xCE //barre verticale
 
-#define smiley (char)1
 
 #endif // SYMBOLES_H_INCLUDED
