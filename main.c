@@ -22,7 +22,7 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(86,24);
+    SetWindow(39,24);
 
     srand(time(NULL));
 
