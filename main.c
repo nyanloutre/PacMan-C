@@ -9,6 +9,7 @@
 #include "structures.h"
 #include "deplacementfantomes.h"
 #include "betterlook.h"
+#include "setwindow.h"
 
 
 int main()
@@ -20,6 +21,8 @@ int main()
     coordonees fantomeB;
     coordonees fantomeC;
     coordonees fantomeD;
+
+    SetWindow(39,25);
 
     srand(time(NULL));
 
