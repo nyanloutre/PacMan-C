@@ -3,10 +3,9 @@
 
 //Le but de cette fonction est de remplacer les dièses initialements générés par des symboles
 
-char renduarene(char terrain[20][38])
+void renduarene(char terrain[20][38])
 {
     int i,j;
-    int haut = 0, gauche = 0, droite = 0, bas = 0;
     char betterterrain [20][38];
 
 
