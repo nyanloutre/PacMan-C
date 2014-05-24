@@ -8,7 +8,7 @@
 #include "affichage.h"
 #include "structures.h"
 #include "deplacementfantomes.h"
-#include "betterlook.h"
+#include "renduarene.h"
 #include "setwindow.h"
 
 
