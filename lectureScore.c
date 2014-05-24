@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void lectureScore(char pseudo[100][4], int score[])
+void lectureScore(char pseudo[100][4], int score[100])
 {
     FILE* sauv = NULL;
     sauv = fopen("score.txt", "r");
@@ -17,7 +17,11 @@ void lectureScore(char pseudo[100][4], int score[])
         {
             fgets(lecture, 4, sauv);
             strcpy(pseudo[i], lecture); //Il faut utiliser ça pour copier des chaines de caractère
-            //pseudo[i][0]=lecture;
+
+            fseek(sauv, 1, SEEK_CUR); // On passe l'espace
+
+            fgets(lecture, 4, sauv); //On lit le score
+            score[i] = atoi(lecture); //On convertit la lecture en nombre
 
             i++;
         }
