@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="affichage.h" />
-		<Unit filename="betterlook.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="betterlook.h" />
 		<Unit filename="deplacement.h" />
 		<Unit filename="deplacementfantomes.h" />
 		<Unit filename="deplacements.c">
@@ -47,10 +43,10 @@
 		<Unit filename="deplacementsfantomes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="generation.c">
+		<Unit filename="initialisation.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="generation.h" />
+		<Unit filename="initialisation.h" />
 		<Unit filename="inscriptionScore.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -62,6 +58,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="renduarene.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="renduarene.h" />
 		<Unit filename="score.c">
 			<Option compilerVar="CC" />
 		</Unit>

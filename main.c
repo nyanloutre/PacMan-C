@@ -3,12 +3,12 @@
 #include <time.h>
 #include <windows.h>
 
-#include "generation.h"
+#include "initialisation.h"
 #include "deplacement.h"
 #include "affichage.h"
 #include "structures.h"
 #include "deplacementfantomes.h"
-#include "betterlook.h"
+#include "renduarene.h"
 #include "setwindow.h"
 
 
