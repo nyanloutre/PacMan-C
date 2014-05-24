@@ -26,13 +26,6 @@ int lectureScore(char pseudo[100][4], int score[100])
             i++;
         }
 
-        /*while (fgets(lecture, 3, sauv)!=NULL)
-        {
-            pseudo[i] = lecture;
-            fgets(*lecture, 3,sauv);
-            score[i] = atoi(*lecture);         //conversion caractère en nombre
-            i++;
-        }*/
         fclose(sauv);
     }
     else
