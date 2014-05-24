@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void lectureScore(char *pseudo[], int score[])
+void lectureScore(char pseudo[100][4], int score[])
 {
     FILE* sauv = NULL;
     sauv = fopen("score.txt", "r");
 
-    char *lecture;
+    char lecture[4];
     int i=0;
 
     if (sauv != NULL)
@@ -16,8 +16,10 @@ void lectureScore(char *pseudo[], int score[])
         while (!feof(sauv))
         {
             fgets(lecture, 4, sauv);
+            strcpy(pseudo[i], lecture); //Il faut utiliser ça pour copier des chaines de caractère
+            //pseudo[i][0]=lecture;
+
             i++;
-            pseudo[i]=lecture;
         }
 
         /*while (fgets(lecture, 3, sauv)!=NULL)
