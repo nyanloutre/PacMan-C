@@ -72,10 +72,6 @@
 		<Unit filename="setwindow.h" />
 		<Unit filename="structures.h" />
 		<Unit filename="symboles.h" />
-		<Unit filename="tableauDesScores.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="tableauDesScores.h" />
 		<Unit filename="triScore.c">
 			<Option compilerVar="CC" />
 		</Unit>
