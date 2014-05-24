@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void lectureScore(char pseudo[100][4], int score[100])
+int lectureScore(char pseudo[100][4], int score[100])
 {
     FILE* sauv = NULL;
     sauv = fopen("score.txt", "r");
@@ -39,4 +39,6 @@ void lectureScore(char pseudo[100][4], int score[100])
     {
         printf("Erreur lors de l'ouverture du fichier pour lecture");
     }
+
+    return (i-1);
 }

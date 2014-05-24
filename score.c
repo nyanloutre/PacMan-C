@@ -2,7 +2,7 @@
 
 void fscore(int scorePlayer)
 {
-    int score[100]={0};
+    int score[100]={0}, maxi;
     char name[12];
     char pseudo[100][4];
 
@@ -14,6 +14,6 @@ void fscore(int scorePlayer)
 
     printf("\nVotre score : %d\n", scorePlayer);
     inscriptionScore(name, scorePlayer);
-    lectureScore(pseudo, score);
-    //triScore(pseudo, score);
+    maxi = lectureScore(pseudo, score);
+    triScore(pseudo, score, maxi);
 }
