@@ -34,5 +34,8 @@ int main()
 
     deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD);
 
+    printf("Appuyez sur une touche pour quitter");
+    getch();
+
     return 0;
 }
