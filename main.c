@@ -3,7 +3,7 @@
 #include <time.h>
 #include <windows.h>
 
-#include "generation.h"
+#include "initialisation.h"
 #include "deplacement.h"
 #include "affichage.h"
 #include "structures.h"
