@@ -6,14 +6,14 @@ void fscore(int scorePlayer)
     char name[12];
     char *pseudo[100];
 
-    printf("Votre Pseudo (3 caracteres): ");
+    /*printf("Votre Pseudo (3 caracteres): ");
     do
     {
         gets(name);
-    }while (strlen(name)!=3);
+    }while (strlen(name)!=3);*/
 
     printf("\nVotre score : %d\n", scorePlayer);
-    inscriptionScore(name, scorePlayer);
-    lectureScore(pseudo, score);
-    triScore(pseudo, score);
+    //inscriptionScore(name, scorePlayer);
+    //lectureScore(pseudo, score);
+    //triScore(pseudo, score);
 }
