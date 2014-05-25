@@ -1,6 +1,6 @@
 #ifndef DEPLACEMENT_H_INCLUDED
 #define DEPLACEMENT_H_INCLUDED
 
-void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD);
+void deplacements(char [20][38], coordonees *, coordonees *, coordonees *, coordonees *, coordonees *);
 
 #endif // DEPLACEMENT_H_INCLUDED
