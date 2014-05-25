@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int lectureScore(char pseudo[100][4], int score[100])
 {
