@@ -129,6 +129,11 @@ void renduarene(char terrain[20][38])
                     betterterrain[i][j] = 'M';
                     break;
 
+            case 'B':
+
+                    betterterrain[i][j] = 'B';
+                    break;
+
             }
 
                 /*Ces test sert à corriger un bug qui fait que quand on arrive

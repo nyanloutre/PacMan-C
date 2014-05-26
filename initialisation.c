@@ -272,6 +272,10 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
     fantomeD->i = 13;
     fantomeD->j = 21;
 
+    //Initialisation des bonus
+
+    terrain[18][1] = 'B';
+    terrain[1][36] = 'B';
 
 
 }
