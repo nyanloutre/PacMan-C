@@ -31,7 +31,7 @@ int main()
 
     renduarene(terrain);
 
-    affichage(terrain, 0);
+    affichage(terrain, 0, 0);
 
     deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD);
 
