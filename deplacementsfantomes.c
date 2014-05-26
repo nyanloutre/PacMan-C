@@ -7,7 +7,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
 
     switch(direction)
     {
-    case 1:
+    case 1: //Vers le bas
         if(terrain[fantome->i + 1][fantome->j]=='.')
         {
             terrain[fantome->i][fantome->j] = point;
@@ -28,7 +28,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
         }
         break;
 
-    case 2:
+    case 2: //Vers la gauche
         if(terrain[fantome->i][fantome->j - 1]=='.')
         {
             terrain[fantome->i][fantome->j] = point;
@@ -49,7 +49,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
         }
         break;
 
-    case 3:
+    case 3: //Vers le haut
         if(terrain[fantome->i - 1][fantome->j]=='.')
         {
             terrain[fantome->i][fantome->j] = point;
@@ -70,7 +70,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
         }
         break;
 
-    case 4:
+    case 4: //Vers la droite
         if(terrain[fantome->i][fantome->j + 1]=='.')
         {
             terrain[fantome->i][fantome->j] = point;
