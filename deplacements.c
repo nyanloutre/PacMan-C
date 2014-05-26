@@ -7,7 +7,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 {
     const int MAX = 4, MIN = 1;
     char entree, pointA = '.', pointB = '.', pointC = '.', pointD = '.';
-    int i=0, j=0, score=0;
+    int i=0, j=0, score=0, bonus = 0;
     int c;
 
 
@@ -73,6 +73,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     entree = 'Q';
                 }
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'B') //Si il n'y a rien on déplace juste PacMan
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->i = PacMan->i + 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    bonus = 1;
+                }
                 break;
 
             case 'q':
@@ -94,6 +101,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 else if(terrain[PacMan->i][PacMan->j - 1]=='M')
                 {
                     entree = 'Q';
+                }
+                else if(terrain[PacMan->i][PacMan->j - 1]=='B')
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->j = PacMan->j - 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    bonus = 1;
                 }
                 break;
 
@@ -117,6 +131,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     entree = 'Q';
                 }
+                else if(terrain[PacMan->i - 1][PacMan->j] == 'B')
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->i = PacMan->i - 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    bonus = 1;
+                }
                 break;
 
             case 'd':
@@ -138,6 +159,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 else if(terrain[PacMan->i][PacMan->j + 1]=='M')
                 {
                     entree = 'Q';
+                }
+                else if(terrain[PacMan->i][PacMan->j + 1]=='B')
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->j = PacMan->j + 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    bonus = 1;
                 }
                 break;
 
