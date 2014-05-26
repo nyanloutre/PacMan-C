@@ -73,7 +73,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'M') //Si c'est un fantome c'est perdu
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && !bonus) //Si c'est un fantome c'est perdu
                 {
                     entree = 'Q';
                 }
@@ -102,7 +102,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i][PacMan->j - 1]=='M')
+                else if(terrain[PacMan->i][PacMan->j - 1]=='M' && !bonus)
                 {
                     entree = 'Q';
                 }
@@ -131,7 +131,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i - 1][PacMan->j] == 'M')
+                else if(terrain[PacMan->i - 1][PacMan->j] == 'M' && !bonus)
                 {
                     entree = 'Q';
                 }
@@ -160,7 +160,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i][PacMan->j + 1]=='M')
+                else if(terrain[PacMan->i][PacMan->j + 1]=='M' && !bonus)
                 {
                     entree = 'Q';
                 }
@@ -178,10 +178,10 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         //Deplacement des fantomes
 
-        pointA = deplacementFantome(ia(*PacMan, *fantomeA), fantomeA, pointA, terrain, &entree);
-        pointB = deplacementFantome(ia(*PacMan, *fantomeB), fantomeB, pointB, terrain, &entree);
-        pointC = deplacementFantome(ia(*PacMan, *fantomeC), fantomeC, pointC, terrain, &entree);
-        pointD = deplacementFantome(ia(*PacMan, *fantomeD), fantomeD, pointD, terrain, &entree);
+        pointA = deplacementFantome(ia(*PacMan, *fantomeA), fantomeA, pointA, terrain, &entree, bonus);
+        pointB = deplacementFantome(ia(*PacMan, *fantomeB), fantomeB, pointB, terrain, &entree, bonus);
+        pointC = deplacementFantome(ia(*PacMan, *fantomeC), fantomeC, pointC, terrain, &entree, bonus);
+        pointD = deplacementFantome(ia(*PacMan, *fantomeD), fantomeD, pointD, terrain, &entree, bonus);
 
         //On affiche la nouvelle frame
         affichage(terrain, score);

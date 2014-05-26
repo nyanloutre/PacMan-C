@@ -1,6 +1,6 @@
 #include "structures.h"
 
-char deplacementFantome(int direction, coordonees *fantome, char point, char terrain[20][38], char *entree)
+char deplacementFantome(int direction, coordonees *fantome, char point, char terrain[20][38], char *entree, int bonus)
 {
 
     //Cette fonction fonctionne exactement de la même manière que pour PacMan : voir deplacement.c
@@ -22,7 +22,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
             terrain[fantome->i][fantome->j] = 'M';
             point = ' ';
         }
-        else if(terrain[fantome->i + 1][fantome->j]=='C')
+        else if(terrain[fantome->i + 1][fantome->j]=='C' && !bonus)
         {
             *entree = 'Q';
         }
@@ -43,7 +43,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
             terrain[fantome->i][fantome->j] = 'M';
             point = ' ';
         }
-        else if(terrain[fantome->i][fantome->j - 1]=='C')
+        else if(terrain[fantome->i][fantome->j - 1]=='C' && !bonus)
         {
             *entree = 'Q';
         }
@@ -64,7 +64,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
             terrain[fantome->i][fantome->j] = 'M';
             point = ' ';
         }
-        else if(terrain[fantome->i - 1][fantome->j]=='C')
+        else if(terrain[fantome->i - 1][fantome->j]=='C' && !bonus)
         {
             *entree = 'Q';
         }
@@ -85,7 +85,7 @@ char deplacementFantome(int direction, coordonees *fantome, char point, char ter
             terrain[fantome->i][fantome->j] = 'M';
             point = ' ';
         }
-        else if(terrain[fantome->i][fantome->j + 1]=='C')
+        else if(terrain[fantome->i][fantome->j + 1]=='C' && !bonus)
         {
             *entree = 'Q';
         }
