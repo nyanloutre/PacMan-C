@@ -1,13 +1,17 @@
+#include <windows.h>
+#include <stdio.h>
+#include <conio.h>
+
 #include "structures.h"
 #include "score.h"
-
-#include <windows.h>
+#include "ia.h"
+#include "affichage.h"
+#include "deplacementfantomes.h"
 
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
-    const int MAX = 4, MIN = 1;
     char entree, pointA = '.', pointB = '.', pointC = '.', pointD = '.';
-    int i=0, j=0, score=0;
+    int score=0;
     int c;
 
 
