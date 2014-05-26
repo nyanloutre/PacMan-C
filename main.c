@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
-#include <conio.h>
+#include "conio.c"
 
 #include "initialisation.h"
 #include "deplacement.h"
@@ -26,6 +26,8 @@ int main()
     SetWindow(39,25);
 
     srand(time(NULL));
+
+    textcolor(3);
 
     initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD);
 
