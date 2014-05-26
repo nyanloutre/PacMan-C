@@ -43,13 +43,14 @@
 		<Unit filename="deplacementsfantomes.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ia.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ia.h" />
 		<Unit filename="initialisation.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="initialisation.h" />
-		<Unit filename="ia.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="inscriptionScore.c">
 			<Option compilerVar="CC" />
 		</Unit>

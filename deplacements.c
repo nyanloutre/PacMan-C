@@ -146,10 +146,10 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         //Deplacement des fantomes
 
-        pointA = deplacementFantome((rand() % (MAX - MIN + 1)) + MIN, fantomeA, pointA, terrain, &entree);
-        pointB = deplacementFantome((rand() % (MAX - MIN + 1)) + MIN, fantomeB, pointB, terrain, &entree);
-        pointC = deplacementFantome((rand() % (MAX - MIN + 1)) + MIN, fantomeC, pointC, terrain, &entree);
-        pointD = deplacementFantome((rand() % (MAX - MIN + 1)) + MIN, fantomeD, pointD, terrain, &entree);
+        pointA = deplacementFantome(ia(*PacMan, *fantomeA), fantomeA, pointA, terrain, &entree);
+        pointB = deplacementFantome(ia(*PacMan, *fantomeB), fantomeB, pointB, terrain, &entree);
+        pointC = deplacementFantome(ia(*PacMan, *fantomeC), fantomeC, pointC, terrain, &entree);
+        pointD = deplacementFantome(ia(*PacMan, *fantomeD), fantomeD, pointD, terrain, &entree);
 
         //On affiche la nouvelle frame
         affichage(terrain, score);
