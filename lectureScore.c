@@ -7,7 +7,7 @@ int lectureScore(char pseudo[100][4], int score[100])
     FILE* sauv = NULL;
     sauv = fopen("score.txt", "r");
 
-    char lecture[4];
+    char lecture[5];
     int i=0;
 
     if (sauv != NULL)
@@ -21,7 +21,7 @@ int lectureScore(char pseudo[100][4], int score[100])
 
             fseek(sauv, 1, SEEK_CUR); // On passe l'espace
 
-            fgets(lecture, 4, sauv); //On lit le score
+            fgets(lecture, 5, sauv); //On lit le score
             score[i] = atoi(lecture); //On convertit la lecture en nombre
 
             i++;
