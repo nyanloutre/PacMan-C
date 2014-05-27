@@ -11,7 +11,7 @@
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
     char entree, pointA = '.', pointB = '.', pointC = '.', pointD = '.';
-    int score=0, bonus = 1, frame = 0;
+    int score=0, bonus = 0, frame = 0;
     int c;
 
 
@@ -245,7 +245,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         pointD = deplacementFantome(ia(*PacMan, *fantomeD), fantomeD, pointD, terrain, &entree, bonus);
 
         //On affiche la nouvelle frame
-        affichage(terrain, score, bonus);
+        affichage(terrain, score, bonus, frame);
 
         //compteur de frame
         if(bonus)
@@ -256,7 +256,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         //On réinitialise le bonus après 50 frames
         if(frame>50)
         {
-            bonus=1;
+            bonus=0;
             frame=0;
         }
 

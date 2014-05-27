@@ -1,7 +1,7 @@
 #include <windows.h>
 #include "symboles.h"
 
-void affichage(char terrain[20][38], int score, int bonus)
+void affichage(char terrain[20][38], int score, int bonus, int frame)
 {
     int i, j;
 
@@ -23,7 +23,7 @@ void affichage(char terrain[20][38], int score, int bonus)
 
     if(bonus)
     {
-        printf("============ BONUS ACTIVE ============");
+        printf("========== BONUS ACTIVE %d ==========", 50 - frame);
     }
 
     Sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
