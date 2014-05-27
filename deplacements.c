@@ -209,7 +209,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             terrain[fantomeA->i][fantomeA->j] = 'C';
             fantomeA->i = 13;
             fantomeA->j = 15;
-            pointA = terrain[fantomeA->i][fantomeA->j];
+            pointA = ' ';
             terrain[fantomeA->i][fantomeA->j] = 'M';
         }
         else if(PacMan->i == fantomeB->i && PacMan->j == fantomeB->j)
@@ -217,7 +217,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             terrain[fantomeB->i][fantomeB->j] = 'C';
             fantomeB->i = 13;
             fantomeB->j = 17;
-            pointB = terrain[fantomeB->i][fantomeB->j];
+            pointB = ' ';
             terrain[fantomeB->i][fantomeB->j] = 'M';
         }
         else if(PacMan->i == fantomeC->i && PacMan->j == fantomeC->j)
@@ -225,7 +225,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             terrain[fantomeC->i][fantomeC->j] = 'C';
             fantomeC->i = 13;
             fantomeC->j = 19;
-            pointC = terrain[fantomeC->i][fantomeC->j];
+            pointC = ' ';
             terrain[fantomeC->i][fantomeC->j] = 'M';
         }
         else if(PacMan->i == fantomeD->i && PacMan->j == fantomeD->j)
@@ -233,7 +233,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             terrain[fantomeD->i][fantomeD->j] = 'C';
             fantomeD->i = 13;
             fantomeD->j = 21;
-            pointD = terrain[fantomeD->i][fantomeD->j];
+            pointD = ' ';
             terrain[fantomeD->i][fantomeD->j] = 'M';
         }
 
