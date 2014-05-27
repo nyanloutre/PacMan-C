@@ -11,7 +11,7 @@
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
     char entree, pointA = '.', pointB = '.', pointC = '.', pointD = '.';
-    int score=0, bonus = 0, frame = 0;
+    int score=0, bonus = 1, frame = 0;
     int c;
 
 
@@ -77,6 +77,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     entree = 'Q';
                 }
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && bonus)
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->i = PacMan->i + 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    score += 10;
+                }
                 else if(terrain[PacMan->i + 1][PacMan->j] == 'B') //Si il n'y a rien on déplace juste PacMan
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
@@ -105,6 +112,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 else if(terrain[PacMan->i][PacMan->j - 1]=='M' && !bonus)
                 {
                     entree = 'Q';
+                }
+                else if(terrain[PacMan->i][PacMan->j - 1]=='M' && bonus)
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->j = PacMan->j - 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    score += 10;
                 }
                 else if(terrain[PacMan->i][PacMan->j - 1]=='B')
                 {
@@ -135,6 +149,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     entree = 'Q';
                 }
+                else if(terrain[PacMan->i - 1][PacMan->j] == 'M' && bonus)
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->i = PacMan->i - 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    score += 10;
+                }
                 else if(terrain[PacMan->i - 1][PacMan->j] == 'B')
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
@@ -164,6 +185,13 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     entree = 'Q';
                 }
+                else if(terrain[PacMan->i][PacMan->j + 1]=='M' && bonus)
+                {
+                    terrain[PacMan->i][PacMan->j] = ' ';
+                    PacMan->j = PacMan->j + 1;
+                    terrain[PacMan->i][PacMan->j] = 'C';
+                    score += 10;
+                }
                 else if(terrain[PacMan->i][PacMan->j + 1]=='B')
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
@@ -174,6 +202,39 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 break;
 
 
+        }
+
+        if(PacMan->i == fantomeA->i && PacMan->j == fantomeA->j)
+        {
+            terrain[fantomeA->i][fantomeA->j] = ' ';
+            fantomeA->i = 13;
+            fantomeA->j = 15;
+            pointA = terrain[fantomeA->i][fantomeA->j];
+            terrain[fantomeA->i][fantomeA->j] = 'M';
+        }
+        else if(PacMan->i + 1 == fantomeB->i && PacMan->j == fantomeB->j)
+        {
+            terrain[fantomeB->i][fantomeB->j] = ' ';
+            fantomeB->i = 13;
+            fantomeB->j = 17;
+            pointB = terrain[fantomeB->i][fantomeB->j];
+            terrain[fantomeB->i][fantomeB->j] = 'M';
+        }
+        else if(PacMan->i + 1 == fantomeC->i && PacMan->j == fantomeC->j)
+        {
+            terrain[fantomeC->i][fantomeC->j] = ' ';
+            fantomeC->i = 13;
+            fantomeC->j = 19;
+            pointC = terrain[fantomeC->i][fantomeC->j];
+            terrain[fantomeC->i][fantomeC->j] = 'M';
+        }
+        else if(PacMan->i + 1 == fantomeD->i && PacMan->j == fantomeD->j)
+        {
+            terrain[fantomeD->i][fantomeD->j] = ' ';
+            fantomeD->i = 13;
+            fantomeD->j = 21;
+            pointD = terrain[fantomeD->i][fantomeD->j];
+            terrain[fantomeD->i][fantomeD->j] = 'M';
         }
 
         //Deplacement des fantomes
@@ -195,7 +256,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         //On réinitialise le bonus après 50 frames
         if(frame>50)
         {
-            bonus=0;
+            bonus=1;
             frame=0;
         }
 
