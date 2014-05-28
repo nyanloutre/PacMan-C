@@ -15,7 +15,7 @@
 
 int main()
 {
-    //Variables
+    //Initialisation des variables
     char terrain [20][38];
     coordonees PacMan;
     coordonees fantomeA;
@@ -23,19 +23,19 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(39,25);
+    SetWindow(39,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
 
-    srand(time(NULL));
+    srand(time(NULL)); //On initialise les nombres aléatoires
 
-    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD);
+    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
 
-    renduarene(terrain);
+    renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
 
-    affichage(terrain, 0, 0, 0);
+    affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
 
-    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD);
+    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
 
-    printf("Appuyez sur une touche pour quitter");
+    printf("Appuyez sur une touche pour quitter"); //Message de fin (car lors d'une release le programme ce ferme automatiquement à la fin)
     getch();
 
     return 0;
