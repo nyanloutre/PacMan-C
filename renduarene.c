@@ -1,15 +1,15 @@
 #include "symboles.h"
 
 
-//Le but de cette fonction est de remplacer les dièses initialements générés par des symboles
+//Le but de cette fonction est de remplacer les dièses initialements générés par des symboles plus esthétiques
 
 void renduarene(char terrain[20][38])
 {
     int i,j;
-    char betterterrain [20][38];
+    char betterterrain [20][38]; //On crée une deuxième arène qui recevra les symboles
 
 
-    //On vide les rectangles
+    //On vide les rectangles, il est impératif de faire cela à part afin de ne pas impacter les autres cases
     for(i=0; i<20; i++)
     {
         for(j=0; j<38; j++)
@@ -92,7 +92,7 @@ void renduarene(char terrain[20][38])
                     betterterrain[i][j] = croix;
                 }
 
-                //Les bouts de lignes
+                //Les bouts de lignes cela sert aux cases qui se trouvent à la fin d'une ligne
                 if(terrain[i-1][j] != '#' && terrain[i][j+1] != '#' && terrain[i+1][j] != '#' &&  terrain[i][j-1] == '#')
                 {
                     betterterrain[i][j] = bar_hor;
@@ -111,6 +111,8 @@ void renduarene(char terrain[20][38])
                 }
 
                 break;
+
+                //Si la case sélectionnée n'est pas un dièse, on ne fait rien
 
             case '.':
 
@@ -136,31 +138,31 @@ void renduarene(char terrain[20][38])
 
             }
 
-                /*Ces test sert à corriger un bug qui fait que quand on arrive
-                  à la dernière case d'une ligne d'un tableau et que l'on veut
-                  lire la case suivante (qui ne devrait pas exister en théorie)
-                  le programme lit la première case de la ligne suivante*/
+            /*Ces test servent à corriger un bug qui fait que quand on arrive
+              à la dernière case d'une ligne d'un tableau et que l'on veut
+              lire la case suivante (qui ne devrait pas exister en théorie)
+              le programme lit la première case de la ligne suivante*/
 
-                if((j == 0 || j == 37) && (i != 0 && i != 19))
-                {
-                    betterterrain[i][j] = bar_ver;
-                }
-                if(j == 0 && i == 19)
-                {
-                    betterterrain[i][j] = coin_bg;
-                }
-                if(j == 37 && i == 0)
-                {
-                    betterterrain[i][j] = coin_hd;
-                }
-                if(j == 0 && (i == 6 || i == 7 || i == 9 || i == 11 || i == 15))
-                {
-                    betterterrain[i][j] = t_dro;
-                }
-                if(j == 37 && (i == 6 || i == 7 || i == 9 || i == 11 || i == 13 || i == 15))
-                {
-                    betterterrain[i][j] = t_gau;
-                }
+            if((j == 0 || j == 37) && (i != 0 && i != 19))
+            {
+                betterterrain[i][j] = bar_ver;
+            }
+            if(j == 0 && i == 19)
+            {
+                betterterrain[i][j] = coin_bg;
+            }
+            if(j == 37 && i == 0)
+            {
+                betterterrain[i][j] = coin_hd;
+            }
+            if(j == 0 && (i == 6 || i == 7 || i == 9 || i == 11 || i == 15))
+            {
+                betterterrain[i][j] = t_dro;
+            }
+            if(j == 37 && (i == 6 || i == 7 || i == 9 || i == 11 || i == 13 || i == 15))
+            {
+                betterterrain[i][j] = t_gau;
+            }
 
         }
     }
