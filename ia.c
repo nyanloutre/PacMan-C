@@ -8,29 +8,49 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
     {
         if (pacman.i < fantome.i) //test pour savoir si le pacman est à gauche du fantôme
         {
-            direction = rand()%2+2;
+            if (terrain[fantome.i-1][fantome.j]==' ')
+            {
+                direction = 3;
+            }
+            else
+            {
+                direction = 2;
+            }
         }
         else
         {
-            direction = rand()%2+1;
+            if (terrain[fantome.i+1][fantome.j]==' ')
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = 2;
+            }
         }
     }
     else
     {
         if (pacman.i < fantome.i)
         {
-            direction = rand()%5+3;
+            if (terrain[fantome.i-1][fantome.j]==' ')
+            {
+                direction = 3;
+            }
+            else
+            {
+                direction = 4;
+            }
         }
         else
         {
-            switch(rand()%2)
+            if (terrain[fantome.i+1][fantome.j]==' ')
             {
-                case 0 :
-                    direction = 1;
-                    break;
-                case 1 :
-                    direction = 4;
-                    break;
+                direction = 1;
+            }
+            else
+            {
+                direction = 4;
             }
         }
     }
