@@ -1,6 +1,6 @@
 #include "structures.h"
 
-//Pour avoir une idée de ce que génère cette fonction voir cette page de mon site : http://trehiou.no-ip.info/wordpress/index.php/pacman-en-c-2
+//Pour avoir une idée de ce que génère cette fonction voir https://github.com/nyanloutre/PacMan-C/releases/tag/v0.1 (uniquement l'executable, le code source ne correspondant pas)
 
 void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantomeA, coordonees* fantomeB, coordonees* fantomeC, coordonees* fantomeD)
 {
@@ -115,7 +115,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-            //Il faut vider ce rectangle && laisser deux passages
+            //Il faut vider ce rectangle et laisser deux passages
 
             if(i == 13 && j > 14 && j < 22)
             {
@@ -171,9 +171,9 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-        // Différentes lignes
+        // Génération des lignes
 
-            //D||ble T au milieu
+            //Double T au milieu
 
             if((i == 6 || i == 10) && j > 10 && j < 26)
             {
@@ -205,7 +205,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-        //Différents traits dans la partie basse
+        //Génération des traits dans la partie basse
 
             //Cinq barres verticales
             if(i > 10 && i < 14 && (j == 9 || j == 27))
