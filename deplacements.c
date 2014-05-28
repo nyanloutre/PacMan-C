@@ -19,7 +19,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
     //Le PacMan se déplace à l'aide des touches z,q,s et d. Le jeu peut être quitté avec Esc
 
-    entree = getch();
+    entree = getch(); //Cette commande permet au jeu de ne pas démarer tout de suite, mais d'attendre que le joueur soit pret
 
     do
     {
@@ -59,7 +59,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
             case 's':
 
-                if(terrain[PacMan->i + 1][PacMan->j] == '.') //Si PacMan se dirige vers un point on supprime le point et on incrémente un compteur
+                if(terrain[PacMan->i + 1][PacMan->j] == '.') //Si PacMan se dirige vers un point on supprime le point et on incrémente le score
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i + 1;
@@ -73,18 +73,17 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && !bonus) //Si c'est un fantome c'est perdu
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && !bonus) //Si c'est un fantôme et que le bonus n'est pas activé c'est perdu
                 {
                     entree = 'Q';
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && bonus)
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
                 {
-                    terrain[PacMan->i][PacMan->j] = ' ';
+                    terrain[PacMan->i][PacMan->j] = ' '; //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
                     PacMan->i = PacMan->i + 1;
-                    //terrain[PacMan->i][PacMan->j] = 'C';
                     score += 10;
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'B') //Si il n'y a rien on déplace juste PacMan
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'B') //Si la case est un bonus on active le bonus
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i + 1;
@@ -117,7 +116,6 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->j = PacMan->j - 1;
-                    //terrain[PacMan->i][PacMan->j] = 'C';
                     score += 10;
                 }
                 else if(terrain[PacMan->i][PacMan->j - 1]=='B')
@@ -153,7 +151,6 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i - 1;
-                    //terrain[PacMan->i][PacMan->j] = 'C';
                     score += 10;
                 }
                 else if(terrain[PacMan->i - 1][PacMan->j] == 'B')
@@ -189,7 +186,6 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->j = PacMan->j + 1;
-                    //terrain[PacMan->i][PacMan->j] = 'C';
                     score += 10;
                 }
                 else if(terrain[PacMan->i][PacMan->j + 1]=='B')
@@ -203,6 +199,9 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
 
         }
+
+        /*On gère les fantômes au cas par cas, il n'y a pas de condition bonus car le seul moyen
+          pour que les coordonées de PacMan soient identiques à celle d'un fantôme est que le bonus soit activé*/
 
         if(PacMan->i == fantomeA->i && PacMan->j == fantomeA->j)
         {
@@ -244,7 +243,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         pointC = deplacementFantome(ia(*PacMan, *fantomeC), fantomeC, pointC, terrain, &entree, bonus);
         pointD = deplacementFantome(ia(*PacMan, *fantomeD), fantomeD, pointD, terrain, &entree, bonus);
 
-        //On affiche la nouvelle frame
+        //On affiche la nouvelle frame ainsi générée
         affichage(terrain, score, bonus, frame);
 
         //compteur de frame
