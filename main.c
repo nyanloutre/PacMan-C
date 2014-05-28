@@ -23,7 +23,7 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(39,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
+    SetWindow(40,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
 
     srand(time(NULL)); //On initialise les nombres aléatoires
 
