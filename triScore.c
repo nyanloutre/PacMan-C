@@ -2,7 +2,7 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
 {
     int i, j, new_score;
     char new_pseudo[4], temp_pseudo[4];
-    for (i = 1; i < maxi; i++)
+    for (i = 1; i < maxi; i++)      // tri score du plus petit au plus grand
     {
         new_score = score[i];
         strcpy(new_pseudo, pseudo[i]);
@@ -17,5 +17,14 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
         strcpy(pseudo[j], new_pseudo);
     }
     printf("Le meilleur score est %d detenu par %s\n", score[maxi-1], pseudo[maxi-1]);
+
+
+    //Affichage tableau des scores
+    printf("\nPseudo\t|\tScore\n");
+    printf("----------------------\n");
+    for (i=maxi-1; i>=0;i--)
+    {
+        printf("%s\t|\t%d\n", pseudo[i], score[i]);
+    }
 
 }
