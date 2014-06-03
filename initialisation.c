@@ -1,6 +1,6 @@
 #include "structures.h"
 
-//Pour avoir une idée de ce que génère cette fonction voir https://github.com/nyanloutre/PacMan-C/releases/tag/v0.1 (uniquement l'executable, le code source ne correspondant pas)
+//Pour avoir une idÃ©e de ce que gÃ©nÃ¨re cette fonction voir https://github.com/nyanloutre/PacMan-C/releases/tag/v0.1 (uniquement l'executable, le code source ne correspondant pas)
 
 void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantomeA, coordonees* fantomeB, coordonees* fantomeC, coordonees* fantomeD)
 {
@@ -10,7 +10,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
         i correspond aux lignes
         j correspond aux collonnes
 
-        Chaque test "dessine" une forme du terrain à l'aide de ses coordonnées
+        Chaque test "dessine" une forme du terrain Ã  l'aide de ses coordonnÃ©es
 
     */
 
@@ -24,7 +24,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             terrain[i][j] = '.';
 
-        //Génération du pourtour
+        //GÃ©nÃ©ration du pourtour
 
             if(i == 0 || j == 0 || i == 19 || j== 37)
             {
@@ -43,7 +43,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
         //Rectangles
 
-            //Première ligne de rectangle
+            //PremiÃ¨re ligne de rectangle
 
             if(i > 1 && j > 1 && i < 5 && j < 8)
             {
@@ -106,7 +106,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-            //Rectangle où les fantomes aparaissent
+            //Rectangle oÃ¹ les fantomes aparaissent
 
             if(i > 11 && j > 13 && i < 15 && j < 23)
             {
@@ -131,7 +131,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-            //Quatrième ligne de rectangles
+            //QuatriÃ¨me ligne de rectangles
 
             if(i > 11 && j > 10 && i < 14 && j < 13)
             {
@@ -171,7 +171,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-        // Génération des lignes
+        // GÃ©nÃ©ration des lignes
 
             //Double T au milieu
 
@@ -189,7 +189,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-        //Les T qui s'imbriquent dans le précédent
+        //Les T qui s'imbriquent dans le prÃ©cÃ©dent
 
             if(i > 5 && i < 10 && (j == 9 || j == 27))
             {
@@ -205,7 +205,7 @@ void initialisation(char terrain[20][38], coordonees* PacMan, coordonees* fantom
 
             }
 
-        //Génération des traits dans la partie basse
+        //GÃ©nÃ©ration des traits dans la partie basse
 
             //Cinq barres verticales
             if(i > 10 && i < 14 && (j == 9 || j == 27))

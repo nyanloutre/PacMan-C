@@ -1,15 +1,15 @@
 #include "symboles.h"
 
 
-//Le but de cette fonction est de remplacer les dièses initialements générés par des symboles plus esthétiques
+//Le but de cette fonction est de remplacer les diÃ¨ses initialements gÃ©nÃ©rÃ©s par des symboles plus esthÃ©tiques
 
 void renduarene(char terrain[20][38])
 {
     int i,j;
-    char betterterrain [20][38]; //On crée une deuxième arène qui recevra les symboles
+    char betterterrain [20][38]; //On crÃ©e une deuxiÃ¨me arÃ¨ne qui recevra les symboles
 
 
-    //On vide les rectangles, il est impératif de faire cela à part afin de ne pas impacter les autres cases
+    //On vide les rectangles, il est impÃ©ratif de faire cela Ã  part afin de ne pas impacter les autres cases
     for(i=0; i<20; i++)
     {
         for(j=0; j<38; j++)
@@ -35,9 +35,9 @@ void renduarene(char terrain[20][38])
             case '#':
 
 
-                /* on verifie pour la case courante ce qu'il y a à:
-                         en haut                    à droite              en bas                       à gauche
-                puis en fonction de ça, on remplace par le symbole correspondant*/
+                /* on verifie pour la case courante ce qu'il y a Ã :
+                         en haut                    Ã  droite              en bas                       Ã  gauche
+                puis en fonction de Ã§a, on remplace par le symbole correspondant*/
 
                 if(terrain[i-1][j] != '#' && terrain[i][j+1] == '#' && terrain[i+1][j] == '#' &&  terrain[i][j-1] != '#')
                 {
@@ -92,7 +92,7 @@ void renduarene(char terrain[20][38])
                     betterterrain[i][j] = croix;
                 }
 
-                //Les bouts de lignes cela sert aux cases qui se trouvent à la fin d'une ligne
+                //Les bouts de lignes cela sert aux cases qui se trouvent Ã  la fin d'une ligne
                 if(terrain[i-1][j] != '#' && terrain[i][j+1] != '#' && terrain[i+1][j] != '#' &&  terrain[i][j-1] == '#')
                 {
                     betterterrain[i][j] = bar_hor;
@@ -112,7 +112,7 @@ void renduarene(char terrain[20][38])
 
                 break;
 
-                //Si la case sélectionnée n'est pas un dièse, on ne fait rien
+                //Si la case sÃ©lectionnÃ©e n'est pas un diÃ¨se, on ne fait rien
 
             case '.':
 
@@ -138,10 +138,10 @@ void renduarene(char terrain[20][38])
 
             }
 
-            /*Ces test servent à corriger un bug qui fait que quand on arrive
-              à la dernière case d'une ligne d'un tableau et que l'on veut
-              lire la case suivante (qui ne devrait pas exister en théorie)
-              le programme lit la première case de la ligne suivante*/
+            /*Ces test servent Ã  corriger un bug qui fait que quand on arrive
+              Ã  la derniÃ¨re case d'une ligne d'un tableau et que l'on veut
+              lire la case suivante (qui ne devrait pas exister en thÃ©orie)
+              le programme lit la premiÃ¨re case de la ligne suivante*/
 
             if((j == 0 || j == 37) && (i != 0 && i != 19))
             {
@@ -167,7 +167,7 @@ void renduarene(char terrain[20][38])
         }
     }
 
-    //On remplace ensuite par le nouveau terrain, on ne peut pas le mettre dans la première boucle car cela fausserai les calculs.
+    //On remplace ensuite par le nouveau terrain, on ne peut pas le mettre dans la premiÃ¨re boucle car cela fausserai les calculs.
     for(i=0; i<20; i++)
     {
         for(j=0; j<38; j++)

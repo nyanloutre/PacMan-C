@@ -5,7 +5,7 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
 {
     int i, j;
 
-    system("CLS"); //On vide l'écran entre chaque frame
+    system("CLS"); //On vide l'Ã©cran entre chaque frame
 
     printf("Votre score est actuellement de %d\nDeplacez vous a l'aide des touches z, q, s et d\nQuittez avec Echap\n", score);
 
@@ -26,5 +26,5 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
         printf("========== BONUS ACTIVE %d ==========", 50 - frame);
     }
 
-    Sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
+    Sleep(200); //On fait une pause entre chaque frame pour contrÃ´ler la vitesse du jeu
 }

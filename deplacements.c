@@ -17,15 +17,15 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
 
 
-    //Le PacMan se déplace à l'aide des touches z,q,s et d. Le jeu peut être quitté avec Esc
+    //Le PacMan se dÃ©place Ã  l'aide des touches z,q,s et d. Le jeu peut Ãªtre quittÃ© avec Esc
 
-    entree = getch(); //Cette commande permet au jeu de ne pas démarer tout de suite, mais d'attendre que le joueur soit pret
+    entree = getch(); //Cette commande permet au jeu de ne pas dÃ©marer tout de suite, mais d'attendre que le joueur soit pret
 
     do
     {
 
-        /*On récupère les entrées au clavier grace à la fonction GetKeyState qui est dans windows.h
-          Les tests empèchent le joueur de diriger PacMan vers un mur (cela ralentirai le jeu)*/
+        /*On rÃ©cupÃ¨re les entrÃ©es au clavier grace Ã  la fonction GetKeyState qui est dans windows.h
+          Les tests empÃ¨chent le joueur de diriger PacMan vers un mur (cela ralentirai le jeu)*/
         if(GetKeyState(0x5A) < 0 && (terrain[PacMan->i - 1][PacMan->j] == ' ' || terrain[PacMan->i - 1][PacMan->j] == '.' || terrain[PacMan->i - 1][PacMan->j] == 'M'))
         {
             entree = 'z';
@@ -52,34 +52,34 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         }
 
 
-        //En fonction de la touche appuiée on déplace le PacMan
+        //En fonction de la touche appuiÃ©e on dÃ©place le PacMan
 
         switch(entree)
         {
 
             case 's':
 
-                if(terrain[PacMan->i + 1][PacMan->j] == '.') //Si PacMan se dirige vers un point on supprime le point et on incrémente le score
+                if(terrain[PacMan->i + 1][PacMan->j] == '.') //Si PacMan se dirige vers un point on supprime le point et on incrÃ©mente le score
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i + 1;
                     terrain[PacMan->i][PacMan->j] = 'C';
                     score = score + 1;
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == ' ') //Si il n'y a rien on déplace juste PacMan
+                else if(terrain[PacMan->i + 1][PacMan->j] == ' ') //Si il n'y a rien on dÃ©place juste PacMan
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i + 1;
                     terrain[PacMan->i][PacMan->j] = 'C';
 
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && !bonus) //Si c'est un fantôme et que le bonus n'est pas activé c'est perdu
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && !bonus) //Si c'est un fantÃ´me et que le bonus n'est pas activÃ© c'est perdu
                 {
                     entree = 'Q';
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
+                else if(terrain[PacMan->i + 1][PacMan->j] == 'M' && bonus) //Si c'est un fantÃ´me et que le bonus est activÃ©, PacMan mange le fantÃ´me et gagne 10 points
                 {
-                    terrain[PacMan->i][PacMan->j] = ' '; //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
+                    terrain[PacMan->i][PacMan->j] = ' '; //La rÃ©aparition de PacMan est gÃ©rÃ©e plus loin car il y a plusieurs fantÃ´mes et qu'il faut les gÃ©rer au cas par cas
                     PacMan->i = PacMan->i + 1;
                     score += 10;
                 }
@@ -200,8 +200,8 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         }
 
-        /*On gère les fantômes au cas par cas, il n'y a pas de condition bonus car le seul moyen
-          pour que les coordonées de PacMan soient identiques à celle d'un fantôme est que le bonus soit activé*/
+        /*On gÃ¨re les fantÃ´mes au cas par cas, il n'y a pas de condition bonus car le seul moyen
+          pour que les coordonÃ©es de PacMan soient identiques Ã  celle d'un fantÃ´me est que le bonus soit activÃ©*/
 
         if(PacMan->i == fantomeA->i && PacMan->j == fantomeA->j)
         {
@@ -243,7 +243,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         pointC = deplacementFantome(ia(*PacMan, *fantomeC, terrain), fantomeC, pointC, terrain, &entree, bonus);
         pointD = deplacementFantome(ia(*PacMan, *fantomeD, terrain), fantomeD, pointD, terrain, &entree, bonus);
 
-        //On affiche la nouvelle frame ainsi générée
+        //On affiche la nouvelle frame ainsi gÃ©nÃ©rÃ©e
         affichage(terrain, score, bonus, frame);
 
         //compteur de frame
@@ -252,7 +252,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             frame++;
         }
 
-        //On réinitialise le bonus après 50 frames
+        //On rÃ©initialise le bonus aprÃ¨s 50 frames
         if(frame>50)
         {
             bonus=0;
@@ -263,7 +263,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
 
 
-    //On vide le buffer clavier car la fonction GetKeyState garde toutes les entrées en mémoire et les ressorts au getch suivant
+    //On vide le buffer clavier car la fonction GetKeyState garde toutes les entrÃ©es en mÃ©moire et les ressorts au getch suivant
 
 
    do {

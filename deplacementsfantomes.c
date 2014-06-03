@@ -3,7 +3,7 @@
 char deplacementFantome(int direction, coordonees *fantome, char point, char terrain[20][38], char *entree, int bonus)
 {
 
-    //Cette fonction fonctionne exactement de la même manière que pour PacMan : voir deplacement.c
+    //Cette fonction fonctionne exactement de la mÃªme maniÃ¨re que pour PacMan : voir deplacement.c
 
     switch(direction)
     {

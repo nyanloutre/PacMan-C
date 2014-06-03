@@ -4,9 +4,9 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
 {
     int direction=0; // on a 1=Bas, 2=Gauche, 3=Haut, 4=Droite
 
-    if (pacman.j < fantome.j)  //test pour savoir si le fantôme est à gauche du pacman
+    if (pacman.j < fantome.j)  //test pour savoir si le fantÃ´me est Ã  gauche du pacman
     {
-        if (pacman.i < fantome.i) //test pour savoir si le pacman est à gauche du fantôme
+        if (pacman.i < fantome.i) //test pour savoir si le pacman est Ã  gauche du fantÃ´me
         {
             direction = rand()%2+2;
         }

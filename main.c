@@ -23,19 +23,19 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(40,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
+    SetWindow(40,25); //On redimentionne la fenÃªtre (c'est le seul rÃ©glage faisable automatiquement)
 
-    srand(time(NULL)); //On initialise les nombres aléatoires
+    srand(time(NULL)); //On initialise les nombres alÃ©atoires
 
-    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
+    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On gÃ©nÃ¨re l'arÃ¨ne
 
-    renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
+    renduarene(terrain); //On effectue un rendu sur l'arÃ¨ne prÃ©cÃ©dement gÃ©nÃ©rÃ©e afin d'avoir un rÃ©sultat plus joli
 
-    affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
+    affichage(terrain, 0, 0, 0); //On affiche une premiÃ¨re fois le terrain
 
-    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
+    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des dÃ©placements
 
-    printf("Appuyez sur une touche pour quitter"); //Message de fin (car lors d'une release le programme ce ferme automatiquement à la fin)
+    printf("Appuyez sur une touche pour quitter"); //Message de fin (car lors d'une release le programme ce ferme automatiquement Ã  la fin)
     getch();
 
     return 0;
