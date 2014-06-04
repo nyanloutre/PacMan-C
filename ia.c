@@ -1,4 +1,4 @@
-﻿#include "structures.h"
+#include "structures.h"
 
 int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
 {
