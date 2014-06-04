@@ -7,7 +7,7 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
 
     system("CLS"); //On vide l'écran entre chaque frame
 
-    printf("Votre score est actuellement de %d\nDeplacez vous a l'aide des touches z, q, s et d\nQuittez avec Echap\n", score);
+    printf("Votre score est actuellement de %d\nDeplacez vous a l'aide des touches z, q, s et d. Tentez d'attraper les B\nQuittez avec Echap\n", score);
 
     for(i=0; i<20; i++)
     {
