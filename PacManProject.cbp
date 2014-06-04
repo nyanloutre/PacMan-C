@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="affichage.h" />
+		<Unit filename="affichageBestScore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="affichageBestScore.h" />
 		<Unit filename="deplacement.h" />
 		<Unit filename="deplacementfantomes.h" />
 		<Unit filename="deplacements.c">
