@@ -8,23 +8,23 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
     {
         if (pacman.i < fantome.i) //test pour savoir si le pacman est en haut du fantôme
         {
-            if (terrain[fantome.i-1][fantome.j]==' ') //si il y a pas de mur devant le fantôme alors ...
+            if (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.') //si il y a pas de mur devant le fantôme alors ...
 
             {
                 direction = 3;
             }
-            else if (terrain[fantome.i][fantome.j-1]==' ')
+            else if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')
             {
                 direction = 2;
             }
         }
         else
         {
-            if (terrain[fantome.i-1][fantome.j]==' ') //si il y a pas de mur devant le fantôme alors ...
+            if (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.') //si il y a pas de mur devant le fantôme alors ...
             {
                 direction = 3;
             }
-            else if (terrain[fantome.i][fantome.j+1]==' ')
+            else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')
             {
                 direction = 4;
             }
@@ -34,7 +34,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
     {
         if (pacman.i < fantome.i)
         {
-            if (terrain[fantome.i-1][fantome.j]==' ')
+            if (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')
             {
                 direction = 3;
             }
@@ -45,7 +45,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
         }
         else
         {
-            if (terrain[fantome.i+1][fantome.j]==' ')
+            if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')
             {
                 direction = 1;
             }
