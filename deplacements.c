@@ -12,6 +12,7 @@
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
     char entree, pointA = ' ', pointB = ' ', pointC = ' ', pointD = ' ';
+    int directionA = 0, directionB = 0, directionC = 0, directionD = 0;
     int score=0, bonus = 0, frame = 0;
     int c;
 
@@ -238,11 +239,15 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         }
 
         //Deplacement des fantomes
+        directionA = ia(*PacMan, *fantomeA, terrain, directionA);
+        directionB = ia(*PacMan, *fantomeB, terrain, directionB);
+        directionC = ia(*PacMan, *fantomeC, terrain, directionC);
+        directionD = ia(*PacMan, *fantomeD, terrain, directionD);
 
-        pointA = deplacementFantome(ia(*PacMan, *fantomeA, terrain), fantomeA, pointA, terrain, &entree, bonus);
-        pointB = deplacementFantome(ia(*PacMan, *fantomeB, terrain), fantomeB, pointB, terrain, &entree, bonus);
-        pointC = deplacementFantome(ia(*PacMan, *fantomeC, terrain), fantomeC, pointC, terrain, &entree, bonus);
-        pointD = deplacementFantome(ia(*PacMan, *fantomeD, terrain), fantomeD, pointD, terrain, &entree, bonus);
+        pointA = deplacementFantome(directionA, fantomeA, pointA, terrain, &entree, bonus);
+        pointB = deplacementFantome(directionB, fantomeB, pointB, terrain, &entree, bonus);
+        pointC = deplacementFantome(directionC, fantomeC, pointC, terrain, &entree, bonus);
+        pointD = deplacementFantome(directionD, fantomeD, pointD, terrain, &entree, bonus);
 
         //On affiche la nouvelle frame ainsi générée
         affichage(terrain, score, bonus, frame);

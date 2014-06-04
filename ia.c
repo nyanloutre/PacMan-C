@@ -3,7 +3,7 @@
 #include "structures.h"
 
 
-int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
+int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirection)
 {
     int direction=0; // on a 1=Bas, 2=Gauche, 3=Haut, 4=Droite
 
@@ -40,40 +40,84 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38])
 
     if (pacman.i<=fantome.i)
     {
-        if (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.') //si il y a pas de mur devant le fantôme alors on avance vers le haut
+        if (pacman.j<=fantome.j)
         {
-            direction = 3;
-        }
-        else if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')
-        {
-            direction = 2;
-        }
-        else if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')
-        {
-            direction = 1;
+            if (olDirection != 3 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')) //si il y a pas de mur devant le fantôme alors on avance vers le haut
+            {
+                direction = 3;
+            }
+            else if (olDirection != 2 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
+            {
+                direction = 2;
+            }
+            else if (olDirection != 1 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
+            {
+                direction = 1;
+            }
+            else if (olDirection != 4 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
+            {
+                direction = 4;
+            }
         }
         else
         {
-            direction = 4;
+            if (olDirection != 3 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')) //si il y a pas de mur devant le fantôme alors on avance vers le haut
+            {
+                direction = 3;
+            }
+            else if (olDirection != 1 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
+            {
+                direction = 1;
+            }
+            else if (olDirection != 2 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
+            {
+                direction = 2;
+            }
+            else if(olDirection != 4 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
+            {
+                direction = 4;
+            }
         }
     }
-    else if (pacman.j>=fantome.j)
+    else if (pacman.i>=fantome.i)
     {
-        if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')
+        if (pacman.j<=fantome.j)
         {
-            direction = 1;
-        }
-        else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')
-        {
-            direction = 4;
-        }
-        else if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')
-        {
-            direction = 2;
+            if (olDirection != 1 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
+            {
+                direction = 1;
+            }
+            else if (olDirection != 2 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
+            {
+                direction = 2;
+            }
+            else if (olDirection != 4 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
+            {
+                direction = 4;
+            }
+            else if(olDirection != 3 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.'))
+            {
+                direction = 3;
+            }
         }
         else
         {
-            direction = 3;
+            if (olDirection != 1 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
+            {
+                direction = 1;
+            }
+            else if (olDirection != 4 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
+            {
+                direction = 4;
+            }
+            else if (olDirection != 2 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
+            {
+                direction = 2;
+            }
+            else if(olDirection != 3 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.'))
+            {
+                direction = 3;
+            }
         }
     }
 
