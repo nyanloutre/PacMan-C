@@ -10,6 +10,7 @@
 #include "deplacementfantomes.h"
 #include "renduarene.h"
 #include "setwindow.h"
+#include "menu.h"
 
 
 int main()
@@ -22,9 +23,11 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(40,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
+    SetWindow(80,25); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
 
     srand(time(NULL)); //On initialise les nombres aléatoires
+
+    menu();
 
     initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
 
