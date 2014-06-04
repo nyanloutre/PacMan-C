@@ -20,9 +20,10 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
 
 
     //Affichage tableau des scores
+    printf("TOP 10\n");
     printf("\nPseudo\t|\tScore\n");
     printf("----------------------\n");
-    for (i=maxi-1; i>=0;i--)
+    for (i=maxi-1; i>=maxi-10;i--)
     {
         printf("%s\t|\t%d\n", pseudo[i], score[i]);
     }
