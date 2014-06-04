@@ -28,9 +28,9 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
             {
                 textcolor(WHITE);
             }
-            else if(terrain[i][j] == 'B')
+            else if(terrain[i][j] == point)
             {
-                textcolor(LIGHTMAGENTA);
+                textcolor(LIGHTGREEN);
             }
             else
             {
@@ -44,10 +44,14 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
         printf("\n");
     }
 
+    textcolor(LIGHTGREEN);
+
     if(bonus)
     {
         printf("========== BONUS ACTIVE %d ==========", 50 - frame);
     }
+
+    textcolor(WHITE);
 
     Sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
 }
