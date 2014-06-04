@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "symboles.h"
+#include "conio.c"
 
 void affichage(char terrain[20][38], int score, int bonus, int frame)
 {
@@ -13,6 +14,23 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
     {
         for(j=0; j<38; j++)
         {
+
+            if(terrain[i][j] == 'C')
+            {
+                textcolor(YELLOW);
+            }
+            else if(terrain[i][j] == 'M')
+            {
+                textcolor(LIGHTRED);
+            }
+            else if(terrain[i][j] == '.')
+            {
+                textcolor(LIGHTGREEN);
+            }
+            else
+            {
+                textcolor(WHITE);
+            }
 
             printf("%c", terrain[i][j]); //On affiche le terrain
 
