@@ -8,6 +8,7 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
 
     system("CLS"); //On vide l'écran entre chaque frame
 
+    textcolor(WHITE);
     printf("Votre score est actuellement de %d\nDeplacez vous a l'aide des touches z, q, s et d. Tentez d'attraper les %c\nQuittez avec Echap\n", score, point);
 
     for(i=0; i<20; i++)
@@ -25,11 +26,15 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
             }
             else if(terrain[i][j] == '.')
             {
-                textcolor(LIGHTGREEN);
+                textcolor(WHITE);
+            }
+            else if(terrain[i][j] == 'B')
+            {
+                textcolor(LIGHTMAGENTA);
             }
             else
             {
-                textcolor(WHITE);
+                textcolor(LIGHTBLUE);
             }
 
             printf("%c", terrain[i][j]); //On affiche le terrain
