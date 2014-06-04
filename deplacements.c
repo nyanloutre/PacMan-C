@@ -11,7 +11,7 @@
 
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
-    char entree, pointA = '.', pointB = '.', pointC = '.', pointD = '.';
+    char entree, pointA = ' ', pointB = ' ', pointC = ' ', pointD = ' ';
     int score=0, bonus = 0, frame = 0;
     int c;
 
