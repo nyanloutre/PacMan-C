@@ -23,6 +23,10 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
             else if(terrain[i][j] == 'M')
             {
                 textcolor(LIGHTRED);
+                if(bonus)
+                {
+                    textcolor(LIGHTGREEN);
+                }
             }
             else if(terrain[i][j] == '.')
             {
