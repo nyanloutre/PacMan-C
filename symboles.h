@@ -12,6 +12,7 @@
 #define t_bas (char)0xCB //T vers le bas
 #define t_dro (char)0xCC //T vers la droite
 #define croix (char)0xCE //barre verticale
+#define point (char)0x4 //Points bonus
 
 
 #endif // SYMBOLES_H_INCLUDED

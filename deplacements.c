@@ -7,6 +7,7 @@
 #include "ia.h"
 #include "affichage.h"
 #include "deplacementfantomes.h"
+#include "symboles.h"
 
 void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA, coordonees *fantomeB, coordonees *fantomeC, coordonees *fantomeD)
 {
@@ -83,7 +84,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     PacMan->i = PacMan->i + 1;
                     score += 10;
                 }
-                else if(terrain[PacMan->i + 1][PacMan->j] == 'B') //Si la case est un bonus on active le bonus
+                else if(terrain[PacMan->i + 1][PacMan->j] == point) //Si la case est un bonus on active le bonus
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i + 1;
@@ -118,7 +119,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     PacMan->j = PacMan->j - 1;
                     score += 10;
                 }
-                else if(terrain[PacMan->i][PacMan->j - 1]=='B')
+                else if(terrain[PacMan->i][PacMan->j - 1]==point)
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->j = PacMan->j - 1;
@@ -153,7 +154,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     PacMan->i = PacMan->i - 1;
                     score += 10;
                 }
-                else if(terrain[PacMan->i - 1][PacMan->j] == 'B')
+                else if(terrain[PacMan->i - 1][PacMan->j] == point)
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->i = PacMan->i - 1;
@@ -188,7 +189,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                     PacMan->j = PacMan->j + 1;
                     score += 10;
                 }
-                else if(terrain[PacMan->i][PacMan->j + 1]=='B')
+                else if(terrain[PacMan->i][PacMan->j + 1]==point)
                 {
                     terrain[PacMan->i][PacMan->j] = ' ';
                     PacMan->j = PacMan->j + 1;
