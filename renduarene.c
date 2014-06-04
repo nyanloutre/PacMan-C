@@ -133,7 +133,7 @@ void renduarene(char terrain[20][38])
 
             case 'B':
 
-                    betterterrain[i][j] = 'B';
+                    betterterrain[i][j] = point;
                     break;
 
             }
