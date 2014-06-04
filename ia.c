@@ -9,9 +9,9 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
     int direction=0; // on a 1=Bas, 2=Gauche, 3=Haut, 4=Droite
     srand(time(NULL));
 
-    if (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')         //libre haut
+    if (olDirection != 1 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.'))         //libre haut
     {
-        if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')          //libre à haut,gauche
+        if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))          //libre à haut,gauche
         {
             if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')                                //libre haut,gauche,bas
             {
@@ -73,7 +73,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
                 direction = rand()%2+2;
             }
         }
-        else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')          //libre à haut, droite
+        else if (olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))          //libre à haut, droite
         {
             if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')              //libre haut,droite,bas
             {
@@ -84,7 +84,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
                 direction = rand()%2+3;
             }
         }
-        else if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.') //libre en haut, bas
+        else if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')) //libre en haut, bas
         {
 
         }
@@ -94,9 +94,9 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
         }
 
     }//FIN LIBRE HAUT
-    else if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')      //libre bas
+    else if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))      //libre bas
     {
-        if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.') //libre bas, gauche
+        if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')) //libre bas, gauche
         {
             if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.') //libre bas, gauche, droite
             {
@@ -113,17 +113,17 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
         }
 
     }//FIN LIBRE BAS
-    else if (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.')      //Libre gauche
+    else if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))      //Libre gauche
     {
-        if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')
+        if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')   //Libre gauche, droite
         {
             if (pacman.j-fantome.j<=0) //SI pacman à gauche
             {
                 direction = 2;
             }
-            else
+            else //SI Pacman à droite
             {
-                direction = 2;
+                direction = 4;
             }
         }
         else
@@ -132,9 +132,13 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
         }
 
     }
-    else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')        //Libre droite
+    else if (olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))        //Libre droite
     {
         direction = 4;
+    }
+    else
+    {
+        direction = rand()%4+1;
     }
     /*---------------------------------------------------------
 
@@ -220,5 +224,6 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
             }
         }
     }*/
+
     return direction;
 }
