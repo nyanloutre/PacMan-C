@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-nettoyageScore(char pseudo[100][4], int score[100], int maxi)
+void nettoyageScore(char pseudo[100][4], int score[100], int maxi)
 {
     int i=0;
     FILE* fichier = NULL;

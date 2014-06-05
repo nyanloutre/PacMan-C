@@ -1,6 +1,6 @@
 #ifndef AFFICHAGEBESTSCORE_H_INCLUDED
 #define AFFICHAGEBESTSCORE_H_INCLUDED
 
-affichageBestScore(char [][4], int [], int);
+void affichageBestScore(char [][4], int [], int);
 
 #endif // AFFICHAGEBESTSCORE_H_INCLUDED

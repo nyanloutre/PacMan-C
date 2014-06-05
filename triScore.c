@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "affichageBestScore.h"
 #include "nettoyageScore.h"
 
@@ -5,7 +7,7 @@
 void triScore(char pseudo[100][4], int score[100], int maxi)
 {
     int i, j, new_score;
-    char new_pseudo[4], temp_pseudo[4];
+    char new_pseudo[4];
     for (i = 1; i < maxi; i++)      // tri score du plus petit au plus grand
     {
         new_score = score[i];

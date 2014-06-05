@@ -1,4 +1,7 @@
-affichageBestScore(char pseudo[100][4], int score[100], int maxi)
+#include <stdio.h>
+#include <conio.h>
+
+void affichageBestScore(char pseudo[100][4], int score[100], int maxi)
 {
     int i=1;
 

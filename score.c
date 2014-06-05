@@ -1,4 +1,7 @@
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 #include "inscriptionScore.h"
 #include "triScore.h"
