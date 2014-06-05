@@ -20,7 +20,6 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
         score[j] = new_score;
         strcpy(pseudo[j], new_pseudo);
     }
-    printf("Le meilleur score est %d detenu par %s\n", score[maxi-1], pseudo[maxi-1]);
 
 
     //Affichage tableau des scores
