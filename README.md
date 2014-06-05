@@ -5,7 +5,7 @@ La description du projet est disponible ici : http://trehiou.no-ip.info/wordpres
 Téléchargement
 --------------
 Il est possible de télécharger les dernières versions compilées en cliquant sur "releases" en haut
-Sinon le code source est disponible avec le bouton "Download ZIP" ou "Clone in Desktop" si vous avez GitHub
+Le code source est disponible avec le bouton "Download ZIP" pour le télécharger avec votre navigateur ou "Clone in Desktop" si vous avez GitHub
 
 Instructions d'installation :
 -----------------------------
