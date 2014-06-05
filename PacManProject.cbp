@@ -66,6 +66,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="nettoyageScore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nettoyageScore.h" />
 		<Unit filename="renduarene.c">
 			<Option compilerVar="CC" />
 		</Unit>

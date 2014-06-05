@@ -1,7 +1,5 @@
-#include <stdlib.h>
-#include <stdio.h>
-
 #include "affichageBestScore.h"
+#include "nettoyageScore.h"
 
 
 void triScore(char pseudo[100][4], int score[100], int maxi)
@@ -31,19 +29,6 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
     //Suppression lorsque fichier trop gros
     if (maxi>50)
     {
-        FILE* fichier = NULL;
-        fichier = fopen("score.txt","w+");
-        if (fichier !=NULL)
-        {
-            for (i=maxi-1; i>maxi-11; i--)
-            {
-                fprintf(fichier, "%s %d\n", pseudo[i], score[i]);
-            }
-            fclose(fichier);
-        }
-        else
-        {
-            printf("Erreur lors de l'ouverture/suppression du contenu du fichier score\n");
-        }
+        nettoyageScore(pseudo, score, maxi);
     }
 }
