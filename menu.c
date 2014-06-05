@@ -1,7 +1,7 @@
 void menu(int *entree)
 {
 
-    int lol;
+    system("CLS");
 
     printf("\n");
 

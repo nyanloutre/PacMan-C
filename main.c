@@ -33,26 +33,30 @@ int main()
 
     srand(time(NULL)); //On initialise les nombres aléatoires
 
-    menu(&mode);
-
     initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
 
     renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
 
-    affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
-
-    if(mode == 1)
+    while(mode>0 && mode<3)
     {
-        deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
-    }
-    else if(mode == 2)
-    {
-        maxi = lectureScore(pseudo, score);     //
-        triScore(pseudo, score, maxi);
-    }
+        menu(&mode);
+        switch(mode)
+        {
+        case 1 :
+            affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
+            deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
+            break;
 
-    printf("Appuyez sur une touche pour quitter"); //Message de fin (car lors d'une release le programme ce ferme automatiquement à la fin)
-    getch();
+        case 2:
+            maxi = lectureScore(pseudo, score);
+            triScore(pseudo, score, maxi);
+            break;
+
+        default:
+            break;
+
+        }
+    }
 
     return 0;
 }

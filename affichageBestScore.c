@@ -15,4 +15,6 @@ affichageBestScore(char pseudo[100][4], int score[100], int maxi)
     }
 
     printf("\n");
+    getch();
+
 }
