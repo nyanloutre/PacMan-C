@@ -18,7 +18,7 @@
 int main()
 {
     //Initialisation des variables
-    int mode=1, maxi;
+    int mode, maxi;
     char terrain [20][38];
     char pseudo[100][4];  //Les deux tableaux suivants servent à l'affichage des meilleurs scores
     int score[100];
@@ -37,7 +37,7 @@ int main()
 
     renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
 
-    while(mode>0 && mode<3)
+    do
     {
         menu(&mode);
         switch(mode)
@@ -56,7 +56,7 @@ int main()
             break;
 
         }
-    }
+    }while(mode>0 && mode<3);
 
     return 0;
 }

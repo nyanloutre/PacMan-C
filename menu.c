@@ -1,5 +1,6 @@
 void menu(int *entree)
 {
+    char saisie;
 
     system("CLS");
 
@@ -117,8 +118,11 @@ void menu(int *entree)
 
     do
     {
-        scanf("%d", entree);
-    }while(*entree>3 || *entree<1);
+        saisie = getch();
+
+    }while((saisie>'3') || (saisie<'1'));
+
+    *entree = saisie - 48;
 
 
 }
