@@ -1,5 +1,7 @@
-void menu()
+void menu(int *entree)
 {
+
+    int lol;
 
     printf("\n");
 
@@ -113,5 +115,10 @@ void menu()
     printf("                          2.MEILLEURS SCORES\n\n");
     printf("                          3.QUITTER\n\n");
 
-    return getch();
+    do
+    {
+        scanf("%d", entree);
+    }while(*entree>3 || *entree<1);
+
+
 }
