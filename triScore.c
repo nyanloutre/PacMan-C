@@ -1,4 +1,6 @@
 #include "affichageBestScore.h"
+#include "nettoyageScore.h"
+
 
 void triScore(char pseudo[100][4], int score[100], int maxi)
 {
@@ -23,4 +25,10 @@ void triScore(char pseudo[100][4], int score[100], int maxi)
 
     //Affichage tableau des scores
     affichageBestScore(pseudo, score, maxi);
+
+    //Suppression lorsque fichier trop gros
+    if (maxi>50)
+    {
+        nettoyageScore(pseudo, score, maxi);
+    }
 }
