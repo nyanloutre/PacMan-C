@@ -33,16 +33,14 @@ int main()
 
     srand(time(NULL)); //On initialise les nombres aléatoires
 
-    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
-
-    renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
-
     do
     {
         menu(&mode);
         switch(mode)
         {
         case 1 :
+            initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
+            renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
             affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
             deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
             break;
