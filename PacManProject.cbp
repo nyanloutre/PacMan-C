@@ -70,6 +70,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="nettoyageScore.h" />
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
 		<Unit filename="renduarene.c">
 			<Option compilerVar="CC" />
 		</Unit>

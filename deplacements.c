@@ -274,7 +274,10 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
    do {
 
-        printf("Vous avez perdu pour sauvegarder et afficher votre score appuyer sur la touche espace");
+        textcolor(12);
+        printf("\n\n\n                              GAME OVER\n\n\n\n");
+        textcolor(15);
+        printf("Pour sauvegarder et afficher votre score appuyer sur la touche espace");
         c = getch();
         system("CLS");
 
