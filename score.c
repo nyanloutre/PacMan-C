@@ -27,7 +27,7 @@ void fscore(int scorePlayer)
     }
 
 
-    printf("\nVotre score : %d\n", scorePlayer);
+    printf("\n\nVotre score est: %d\n\n", scorePlayer);
     inscriptionScore(name, scorePlayer);    //Inscription du score dans le fichier .txt
     maxi = lectureScore(pseudo, score);     //
     triScore(pseudo, score, maxi);

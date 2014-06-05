@@ -48,6 +48,7 @@ int main()
             break;
 
         case 2:
+            system("CLS");
             maxi = lectureScore(pseudo, score);
             triScore(pseudo, score, maxi);
             break;

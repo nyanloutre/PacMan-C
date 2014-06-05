@@ -2,8 +2,6 @@ affichageBestScore(char pseudo[100][4], int score[100], int maxi)
 {
     int i=1;
 
-    system("CLS");
-
     printf("   MEILLEURS SCORES\n\n");
     printf("\nPseudo\t|\tScore\n");
     printf("----------------------\n");
