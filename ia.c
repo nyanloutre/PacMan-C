@@ -2,7 +2,6 @@
 #include <time.h>
 
 #include "structures.h"
-//Peut-être faudra-t-il supprimer dans les if principaux le old Direction et l'insérer dans la détermination de la direction (if le plus imbriqué)
 
 int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirection)
 {
@@ -21,7 +20,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
                     if (pacman.j-fantome.j<=0) //SI pacman à gauche
                     {
                         //le pacman ce trouve en haut à gauche du fantôme
-                        if (pacman.i-fantome.i==0)
+                        if (pacman.i-fantome.i==0)//test pour savoir si le pacman est sur la même ligne que le fantôme
                         {
                             direction = 2;
                         }
@@ -66,7 +65,33 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
             }
             else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,gauche,droite
             {
-
+                if (pacman.i-fantome.i<=0) //SI pacman en haut
+                {
+                    if (pacman.j-fantome.j>=0) //SI pacman à droite
+                    {
+                        //le pacman ce trouve en haut à droite du fantôme
+                        if (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                        {
+                            direction = 4;
+                        }
+                        else if (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                        {
+                            direction = 3;
+                        }
+                        else
+                        {
+                            direction = rand()%2+3;
+                        }
+                    }
+                    else if (pacman.j-fantome.j<=0) //SI pacman à gauche
+                    {
+                        direction = 2;
+                    }
+                    else
+                    {
+                        direction = 3;
+                    }
+                }
             }
             else
             {
@@ -262,90 +287,6 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
     {
         direction = rand()%4+1;
     }
-    /*---------------------------------------------------------
-
-    if (pacman.i<=fantome.i)
-    {
-        if (pacman.j<=fantome.j)
-        {
-            if (olDirection != 1 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')) //si il y a pas de mur devant le fantôme alors on avance vers le haut
-            {
-                direction = 3;
-            }
-            else if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
-            {
-                direction = 2;
-            }
-            else if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
-            {
-                direction = 1;
-            }
-            else if (olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
-            {
-                direction = 4;
-            }
-        }
-        else
-        {
-            if (olDirection != 1 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.')) //si il y a pas de mur devant le fantôme alors on avance vers le haut
-            {
-                direction = 3;
-            }
-            else if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
-            {
-                direction = 1;
-            }
-            else if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
-            {
-                direction = 2;
-            }
-            else if(olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
-            {
-                direction = 4;
-            }
-        }
-    }
-    else if (pacman.i>=fantome.i)
-    {
-        if (pacman.j<=fantome.j)
-        {
-            if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
-            {
-                direction = 1;
-            }
-            else if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
-            {
-                direction = 2;
-            }
-            else if (olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
-            {
-                direction = 4;
-            }
-            else if(olDirection != 1 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.'))
-            {
-                direction = 3;
-            }
-        }
-        else
-        {
-            if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.'))
-            {
-                direction = 1;
-            }
-            else if (olDirection != 2 && (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.'))
-            {
-                direction = 4;
-            }
-            else if (olDirection != 4 && (terrain[fantome.i][fantome.j-1]==' ' || terrain[fantome.i][fantome.j-1]=='.'))
-            {
-                direction = 2;
-            }
-            else if(olDirection != 1 && (terrain[fantome.i-1][fantome.j]==' ' || terrain[fantome.i-1][fantome.j]=='.'))
-            {
-                direction = 3;
-            }
-        }
-    }*/
 
     return direction;
 }
