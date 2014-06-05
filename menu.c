@@ -107,7 +107,11 @@ void menu()
     textcolor(15);
     printf("                                       Par Paul TREHIOU et Victor SENE\n");
 
+    printf("\n\n\n");
+    textcolor(14);
+    printf("                          1.JOUER\n\n");
+    printf("                          2.MEILLEURS SCORES\n\n");
+    printf("                          3.QUITTER\n\n");
 
-
-    getch();
+    return getch();
 }
