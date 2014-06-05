@@ -78,15 +78,99 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
             if (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')              //libre haut,droite,bas
             {
                 // A VOIR
+                if (pacman.i-fantome.i<=0) //SI pacman en haut
+                {
+                    if (pacman.j-fantome.j>=0) //SI pacman à droite
+                    {
+                        //le pacman ce trouve en haut à droite du fantôme
+                        if (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                        {
+                            direction = 4;
+                        }
+                        else if (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                        {
+                            direction = 1;
+                        }
+                        else
+                        {
+                            direction = rand()%2+3;
+                        }
+                    }
+                    else
+                    {
+                        direction = 3;
+                    }
+                }
+                else //SI pacman en bas
+                {
+                    if (pacman.j-fantome.j>=0) //SI pacman à droite
+                    {
+                        //le pacman ce trouve en bas à droite du fantôme
+                        if (pacman.i-fantome.i==0)
+                        {
+                            direction = 4;
+                        }
+                        else if (pacman.j-fantome.j==0)
+                        {
+                            direction = 1;
+                        }
+                        else
+                        {
+                            if (rand()%2==0)
+                            {
+                                direction = 1;
+                            }
+                            else
+                            {
+                                direction = 4;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        direction = 1;
+                    }
+                }
+
             }
-            else
+            else if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,droite, gauche
             {
-                direction = rand()%2+3;
+                if (pacman.i-fantome.i<=0) //SI pacman en haut
+                {
+                    if (pacman.j-fantome.j>=0) //SI pacman à droite
+                    {
+                        //le pacman ce trouve en haut à droite du fantôme
+                        if (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                        {
+                            direction = 4;
+                        }
+                        else if (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                        {
+                            direction = 3;
+                        }
+                        else
+                        {
+                            direction = rand()%2+3;
+                        }
+                    }
+                    else
+                    {
+                        direction = 2;
+                    }
+                }
             }
+
         }
         else if (olDirection != 3 && (terrain[fantome.i+1][fantome.j]==' ' || terrain[fantome.i+1][fantome.j]=='.')) //libre en haut, bas
         {
-
+            if (pacman.i-fantome.i<=0)
+            {
+                direction = 3;
+            }
+            else
+            {
+                direction = 1;
+            }
         }
         else
         {
@@ -101,10 +185,48 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
             if (terrain[fantome.i][fantome.j+1]==' ' || terrain[fantome.i][fantome.j+1]=='.') //libre bas, gauche, droite
             {
                 //A VOIR
-            }
-            else
-            {
-                direction = rand()%2+1;
+                if (pacman.i-fantome.i>=0) //SI pacman en bas
+                {
+                    if (pacman.j-fantome.j<=0) //SI pacman à gauche
+                    {
+                       //pacman en bas à gauche
+                       if (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                        {
+                            direction = 2;
+                        }
+                        else if (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                        {
+                            direction = 1;
+                        }
+                        else
+                        {
+                            direction = rand()%2+1;
+                        }
+                    }
+                    else
+                    {
+                        //pacman en bas à droite
+                        if (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                        {
+                            direction = 4;
+                        }
+                        else if (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                        {
+                            direction = 1;
+                        }
+                        else
+                        {
+                            if (rand()%2==0)
+                            {
+                                direction = 1;
+                            }
+                            else
+                            {
+                                direction = 4;
+                            }
+                        }
+                    }
+                }
             }
         }
         else
