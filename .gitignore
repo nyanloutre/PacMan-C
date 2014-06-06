@@ -26,6 +26,9 @@
 *.layout
 *.depend
 
+#Word
+~$*
+
 # Fichiers spécifiques au projet
 
 score.txt
