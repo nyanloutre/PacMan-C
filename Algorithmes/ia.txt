@@ -4,212 +4,196 @@ ALORS
     
 
     SI (olDirection != 1 ET (terrain[fantome.i-1][fantome.j]==' ' OU terrain[fantome.i-1][fantome.j]=='.'))         //libre haut
-    ALORS
-        SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.'))          //libre à haut,gauche
         ALORS
-            SI (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')                                //libre haut,gauche,bas
-            ALORS
-                SI (pacman.i-fantome.i<=0) //SI pacman en haut
+            SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.'))          //libre à haut,gauche
                 ALORS
-                    SI (pacman.j-fantome.j<=0) //SI pacman à gauche
-                    ALORS
-                        //le pacman ce trouve en haut à gauche du fantôme
-                        SI (pacman.i-fantome.i==0)//test pour savoir si le pacman est sur la même ligne que le fantôme
-                            ALORS    direction <-- 2
-                            
-                            SINON SI (pacman.j-fantome.j==0)
-                                direction <-- 3
-                            
-                            SINON
-                                direction <-- rand()%2+2
-                            
-                        FIN SI
-                    SINON
-                        direction <-- 3
-                    FIN SI
-                SINON //SI pacman en bas
-                ALORS
-                    SI (pacman.j-fantome.j<=0) //SI pacman à gauche
+                    SI (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')                                //libre haut,gauche,bas
                         ALORS
-                            //le pacman ce trouve en bas à gauche du fantôme
-                            SI (pacman.i-fantome.i==0)
-                                direction <-- 2
-                            SINON SI (pacman.j-fantome.j==0)
-                                direction <-- 3
-                            SINON
-                                direction <-- rand()%2+1
+                            SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                                ALORS
+                                    SI (pacman.j-fantome.j<=0) //SI pacman à gauche
+                                        ALORS
+                                            //le pacman ce trouve en haut à gauche du fantôme
+                                            SI (pacman.i-fantome.i==0)//test pour savoir si le pacman est sur la même ligne que le fantôme
+                                                ALORS    direction <-- 2
+                                                
+                                                SINON SI (pacman.j-fantome.j==0)
+                                                    direction <-- 3
+                                                
+                                                SINON
+                                                    direction <-- rand()%2+2
+                                                
+                                            FIN SI
+                                        SINON
+                                            direction <-- 3
+                                        FIN SI
+                                SINON //SI pacman en bas
+                                    SI (pacman.j-fantome.j<=0) //SI pacman à gauche
+                                        ALORS
+                                            //le pacman ce trouve en bas à gauche du fantôme
+                                            SI (pacman.i-fantome.i==0)
+                                                direction <-- 2
+                                            SINON SI (pacman.j-fantome.j==0)
+                                                direction <-- 3
+                                            SINON
+                                                direction <-- rand()%2+1
+                                            FIN SI
+                                        SINON
+                                            direction <-- 1
+                                    FIN SI
                             FIN SI
+                        SINON SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,gauche,droite
+                            SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                                ALORS
+                                    SI (pacman.j-fantome.j>=0) //SI pacman à droite
+                                        ALORS
+                                            //le pacman ce trouve en haut à droite du fantôme
+                                            SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                                ALORS
+                                                    direction <-- 4
+                                                SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                                                    direction <-- 3
+                                                SINON
+                                                    direction <-- rand()%2+3
+                                            FIN SI
+                                    SINON SI (pacman.j-fantome.j<=0) //SI pacman à gauche
+                                        direction <-- 2
+                                    SINON
+                                        direction <-- 3
+                                    FIN SI
+                            FIN SI
+                        SINON
+                            direction <-- rand()%2+2
+                        FIN SI
+                SINON SI (olDirection != 2 ET (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.'))          //libre à haut, droite
+                    SI (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')              //libre haut,droite,bas
+                        ALORS
+                            SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                                ALORS
+                                    SI (pacman.j-fantome.j>=0) //SI pacman à droite
+                                        ALORS
+                                            //le pacman ce trouve en haut à droite du fantôme
+                                            SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                                ALORS
+                                                    direction <-- 4
+                                                SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                                                
+                                                    direction <-- 1
+                                                SINON
+                                                
+                                                    direction <-- rand()%2+3
+                                            FIN SI
+                                        SINON
+                                            direction <-- 3
+                                    FIN SI
+                                SINON //SI pacman en bas
+                                    SI (pacman.j-fantome.j>=0) //SI pacman à droite
+                                        ALORS
+                                            //le pacman ce trouve en bas à droite du fantôme
+                                            SI (pacman.i-fantome.i==0)
+                                                ALORS
+                                                    direction <-- 4
+                                                SINON SI (pacman.j-fantome.j==0)
+                                                    direction <-- 1
+                                                SINON
+                                                    SI (rand()%2==0)
+                                                        ALORS
+                                                            direction <-- 1
+                                                        SINON
+                                                            direction <-- 4
+                                                    FIN SI
+                                            FIN SI
+                                        SINON
+                                            direction <-- 1
+                                    FIN SI
+                            FIN SI
+                        SINON SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,droite, gauche
+                            SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                                ALORS
+                                    SI (pacman.j-fantome.j>=0) //SI pacman à droite
+                                        ALORS
+                                            //le pacman ce trouve en haut à droite du fantôme
+                                            SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                                ALORS
+                                                    direction <-- 4
+                                                SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                                                    direction <-- 3
+                                                SINON
+                                                    direction <-- rand()%2+3
+                                            FIN SI
+                                        SINON
+                                            direction <-- 2
+                                    FIN SI
+                            FIN SI
+                        FIN SI
+                SINON SI (olDirection != 3 ET (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')) //libre en haut, bas
+                    SI (pacman.i-fantome.i<=0)
+                        ALORS
+                            direction <-- 3
                         SINON
                             direction <-- 1
                     FIN SI
-                FIN SI
-            SINON SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,gauche,droite
-            ALORS
-                SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                SINON
+                    direction <-- 3
+            FIN SI
+
+        //FIN SI LIBRE HAUT
+        SINON SI (olDirection != 3 ET (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.'))      //libre bas
+            SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.')) //libre bas, gauche
+                SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.') //libre bas, gauche, droite
                     ALORS
-                        SI (pacman.j-fantome.j>=0) //SI pacman à droite
+                        SI (pacman.i-fantome.i>=0) //SI pacman en bas
                             ALORS
-                                //le pacman ce trouve en haut à droite du fantôme
-                                SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                SI (pacman.j-fantome.j<=0) //SI pacman à gauche
                                     ALORS
-                                        direction <-- 4
-                                    SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
-                                        direction <-- 3
+                                       //pacman en bas à gauche
+                                       SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                            ALORS
+                                                direction <-- 2
+                                            SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                                                direction <-- 1
+                                            SINON
+                                                direction <-- rand()%2+1
+                                        FIN SI
                                     SINON
-                                        direction <-- rand()%2+3
+                                        //pacman en bas à droite
+                                        SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
+                                            ALORS
+                                                direction <-- 4
+                                            SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
+                                                direction <-- 1
+                                            SINON
+                                                SI (rand()%2==0)
+                                                    ALORS
+                                                        direction <-- 1
+                                                    SINON
+                                                        direction <-- 4
+                                                FIN SI
+                                        FIN SI
                                 FIN SI
-                        SINON SI (pacman.j-fantome.j<=0) //SI pacman à gauche
-                            direction <-- 2
-                        SINON
-                            direction <-- 3
                         FIN SI
                 FIN SI
             SINON
-                direction <-- rand()%2+2
+                direction <-- 1
             FIN SI
-        SINON SI (olDirection != 2 ET (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.'))          //libre à haut, droite
-        ALORS
-            SI (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')              //libre haut,droite,bas
+    //FIN SI LIBRE BAS
+        SINON SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.'))      //Libre gauche
+            SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //Libre gauche, droite
                 ALORS
-                    SI (pacman.i-fantome.i<=0) //SI pacman en haut
+                    SI (pacman.j-fantome.j<=0) //SI pacman à gauche
                         ALORS
-                            SI (pacman.j-fantome.j>=0) //SI pacman à droite
-                                ALORS
-                                    //le pacman ce trouve en haut à droite du fantôme
-                                    SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
-                                        ALORS
-                                            direction <-- 4
-                                        SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
-                                        
-                                            direction <-- 1
-                                        SINON
-                                        
-                                            direction <-- rand()%2+3
-                                    FIN SI
-                                SINON
-                                    direction <-- 3
-                            FIN SI
-                        SINON //SI pacman en bas
-                            SI (pacman.j-fantome.j>=0) //SI pacman à droite
-                                ALORS
-                                    //le pacman ce trouve en bas à droite du fantôme
-                                    SI (pacman.i-fantome.i==0)
-                                        ALORS
-                                            direction <-- 4
-                                        SINON SI (pacman.j-fantome.j==0)
-                                            direction <-- 1
-                                        SINON
-                                            SI (rand()%2==0)
-                                                ALORS
-                                                    direction <-- 1
-                                                SINON
-                                                    direction <-- 4
-                                            FIN SI
-                                    FIN SI
-                                SINON
-                                    direction <-- 1
-                            FIN SI
+                            direction <-- 2
+                        SINON //SI Pacman à droite
+                            direction <-- 4
                     FIN SI
-                SINON SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //libre à haut,droite, gauche
-                    SI (pacman.i-fantome.i<=0) //SI pacman en haut
-                        ALORS
-                            SI (pacman.j-fantome.j>=0) //SI pacman à droite
-                                ALORS
-                                    //le pacman ce trouve en haut à droite du fantôme
-                                    SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
-                                        ALORS
-                                            direction <-- 4
-                                        SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
-                                            direction <-- 3
-                                        SINON
-                                            direction <-- rand()%2+3
-                                    FIN SI
-                                SINON
-                                    direction <-- 2
-                            FIN SI
-                    FIN SI
-                FIN SI
-        SINON SI (olDirection != 3 ET (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.')) //libre en haut, bas
-            SI (pacman.i-fantome.i<=0)
-                ALORS
-                    direction <-- 3
                 SINON
-                    direction <-- 1
+                    direction <-- 2
             FIN SI
-        SINON
-            direction <-- 3
-        FIN SI
-
-    //FIN SI LIBRE HAUT
-    SINON SI (olDirection != 3 ET (terrain[fantome.i+1][fantome.j]==' ' OU terrain[fantome.i+1][fantome.j]=='.'))      //libre bas
-        SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.')) //libre bas, gauche
-            SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.') //libre bas, gauche, droite
-                ALORS
-                    SI (pacman.i-fantome.i>=0) //SI pacman en bas
-                        ALORS
-                            SI (pacman.j-fantome.j<=0) //SI pacman à gauche
-                                ALORS
-                                   //pacman en bas à gauche
-                                   SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
-                                        ALORS
-                                            direction <-- 2
-                                        SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
-                                            direction <-- 1
-                                        SINON
-                                            direction <-- rand()%2+1
-                                    FIN SI
-                                SINON
-                                    //pacman en bas à droite
-                                    SI (pacman.i-fantome.i==0) //SI pacman sur même ligne
-                                        ALORS
-                                            direction <-- 4
-                                        SINON SI (pacman.j-fantome.j==0)//SI pacman sur même colonne
-                                            direction <-- 1
-                                        SINON
-                                            SI (rand()%2==0)
-                                                ALORS
-                                                direction <-- 1
-                                            SINON
-                                                direction <-- 4
-                                            FIN SI
-                                    FIN SI
-                        FIN SI
-                    FIN SI
-            FIN SI
-        FIN SI
-        SINON
-        ALORS
-            direction <-- 1
-        FIN SI
-
-    FIN SI//FIN SI LIBRE BAS
-    SINON SI (olDirection != 4 ET (terrain[fantome.i][fantome.j-1]==' ' OU terrain[fantome.i][fantome.j-1]=='.'))      //Libre gauche
-    ALORS
-        SI (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.')   //Libre gauche, droite
-        ALORS
-            SI (pacman.j-fantome.j<=0) //SI pacman à gauche
-            ALORS
-                direction <-- 2
-            FIN SI
-            SINON //SI Pacman à droite
+        SINON SI (olDirection != 2 ET (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.'))        //Libre droite
             ALORS
                 direction <-- 4
-            FIN SI
-        FIN SI
         SINON
-        ALORS
-            direction <-- 2
-        FIN SI
-
-    FIN SI
-    SINON SI (olDirection != 2 ET (terrain[fantome.i][fantome.j+1]==' ' OU terrain[fantome.i][fantome.j+1]=='.'))        //Libre droite
-    ALORS
-        direction <-- 4
-    FIN SI
-    SINON
-    ALORS
-        direction <-- rand()%4+1
-    FIN SI
-
-    return direction
+            direction <-- rand()%4+1
 FIN SI
+
+    Retourner direction
