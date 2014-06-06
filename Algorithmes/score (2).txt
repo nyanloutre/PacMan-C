@@ -1,13 +1,13 @@
-entier fscore(entier scorePlayer)
+ï»¿entier fscore(entier scorePlayer)
 DEBUT
     entier score[100]={0}, maxi
-    tableau de 12 charactères name[12]
-    tableau de 100 charactères pseudo[100][4]
+    tableau de 12 charactÃ¨res name[12]
+    tableau de 100 charactÃ¨res pseudo[100][4]
 
     Ecrire("Votre Pseudo (3 caracteres): ")
     FAIRE
         Lire (name)
-    TANT QUE (strlen(name)!=3)                  //test sur la longueur de la chaine de caractères
+    TANT QUE (strlen(name)!=3)                  //test sur la longueur de la chaine de caractÃ¨res
 
     Ecrire("Votre score : " scorePlayer)
     inscriptionScore(name, scorePlayer)
