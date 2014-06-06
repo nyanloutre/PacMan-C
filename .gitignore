@@ -27,7 +27,7 @@
 *.depend
 
 #Word
-~$*
+~*
 
 # Fichiers spécifiques au projet
 
