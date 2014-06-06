@@ -1,0 +1,17 @@
+entier fscore(entier scorePlayer)
+DEBUT
+    entier score[100]={0}, maxi
+    tableau de 12 charactères name[12]
+    tableau de 100 charactères pseudo[100][4]
+
+    Ecrire("Votre Pseudo (3 caracteres): ")
+    FAIRE
+        Lire (name)
+    TANT QUE (strlen(name)!=3)                  //test sur la longueur de la chaine de caractères
+
+    Ecrire("Votre score : " scorePlayer)
+    inscriptionScore(name, scorePlayer)
+    maxi <-- lectureScore(pseudo, score)
+    triScore(pseudo, score, maxi)
+FIN
+
