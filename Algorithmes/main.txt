@@ -5,20 +5,37 @@ Variables   tableau de caractère terrain [20][38]
             S_coordonees fantomeB
             S_coordonees fantomeC
             S_coordonees fantomeD
+			entier mode, maxi
+			Tableau de 20 chaines de 38 caractères terrain
+			Tableau de 100 chaines de 4 caractères pseudo[100][4]  //Les deux tableaux suivants servent à l'affichage des meilleurs scores
+
 
 DEBUT
     SetWindow(39,25) //forcer une taille de la fenêtre dans le CMD
 
     initialisation du générateur de nombre aléatoire
 
-    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD)
+    FAIRE
+        menu(&mode)
+        CHOISIR PARMI(mode)
+        {
+        case 1 :
+            initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD) //On génère l'arène
+            renduarene(terrain) //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
+            affichage(terrain, 0, 0, 0) //On affiche une première fois le terrain
+            deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD) //On lance la gestion des déplacements
+            break
 
-    renduarene(terrain)
+        case 2:
+            system("CLS")
+            maxi <-- lectureScore(pseuFAIRE, score)
+            triScore(pseudo, score, maxi)
+            break
 
-    affichage(terrain, 0)
+        default:
+            break
 
-    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD)
-
-    Ecrire("Appuyez sur une touche pour quitter");
-    Lire()
+        }
+    TANT QUE(mode>0 ET mode<3)
+	
 FIN
