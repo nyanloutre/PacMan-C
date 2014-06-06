@@ -1,0 +1,8 @@
+//Affichage tableau des scores
+Ecrire("TOP 10\n\nPseudo\t|\tScore\n----------------------\n")
+i <-- maxi-1
+TANT QUE (maxi-11>=0)
+{
+    ECRIRE(pseudo[i],"\t|\t", score[i])
+    i <-- i-1
+}

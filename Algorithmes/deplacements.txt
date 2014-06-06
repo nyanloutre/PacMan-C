@@ -1,0 +1,119 @@
+entier deplacements (tableau de 20 chaines de 38 caractères terrain, pointeur vers coordone coordPacMan, pointeur vers Coordone fantomeA, pointeur vers Coordone fantomeB, pointeur vers Coordone fantomeC, pointeur vers Coordone fantomeD)
+
+VARIABLES charactère entree, pointA <-- '.', pointB <-- '.', pointC <-- '.', pointD <-- '.'
+		entier score <-- 0, bonus <-- 0, frame <-- 0, c
+
+DEBUT
+
+    //Le PacMan se déplace à l'aide des touches z,q,s et d. Le jeu peut être quitté avec Esc
+	
+    Faire
+
+        Lire(entree) //En réalité le getch est remplacé par une API Windows afin de ne pas stopper le jeu à chaque frame
+
+        CHOISIR entree parmi
+
+            'z':
+
+                SI (terrain[coordPacMan.i + 1][coordPacMan.j]='.')
+
+                    ALORS
+
+                        terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                        coordPacMan.i <-- coordPacMan.i + 1
+                        terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+                        score <-- score + 1
+
+                    SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]=' ')
+
+                        ALORS
+
+                            terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                            coordPacMan.i <-- coordPacMan.i + 1
+                            terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+
+                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                            ALORS entree <-- 'Q'
+                            SINON Rien
+        
+            'q':
+
+                SI (terrain[coordPacMan.i][coordPacMan.j - 1]='.')
+
+                    ALORS
+
+                        terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                        coordPacMan.j <-- coordPacMan.j - 1
+                        terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+                        score <-- score + 1
+
+                    SINON SI (terrain[coordPacMan.i][coordPacMan.j - 1]=' ')
+
+                        ALORS
+
+                            terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                            coordPacMan.j <-- coordPacMan.j - 1
+                            terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+
+                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                            ALORS entree <-- 'Q'
+                            SINON Rien
+
+            's':
+
+                SI (terrain[coordPacMan.i - 1][coordPacMan.j]='.')
+
+                    ALORS
+
+                        terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                        coordPacMan.i <-- coordPacMan.i - 1
+                        terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+                        score <-- score + 1
+
+                    SINON SI (terrain[coordPacMan.i - 1][coordPacMan.j]=' ')
+
+                        ALORS
+
+                            terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                            coordPacMan.i <-- coordPacMan.i - 1
+                            terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+
+                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                            ALORS entree <-- 'Q'
+                            SINON Rien
+            'd':
+
+                SI (terrain[coordPacMan.i][coordPacMan.j + 1]='.')
+
+                    ALORS
+
+                        terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                        coordPacMan.j <-- coordPacMan.j + 1
+                        terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+                        score <-- score + 1
+
+                    SINON SI (terrain[coordPacMan.i][coordPacMan.j + 1]=' ')
+
+                        ALORS
+
+                            terrain[coordPacMan.i][coordPacMan.j] <-- ' '
+                            coordPacMan.j <-- coordPacMan.j + 1
+                            terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
+
+                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                            ALORS entree <-- 'Q'
+                            SINON Rien
+        SINON Rien
+
+        //Deplacement des fantomes
+
+        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeA, pointA, terrain, entree)
+        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeB, pointB, terrain, entree)
+        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeC, pointC, terrain, entree)
+        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeD, pointD, terrain, entree)
+
+    Tant que entree != 'Q'
+	
+	Retourner score
+	
+Fin

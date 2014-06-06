@@ -1,0 +1,16 @@
+vide affichage(tableau de charactère terrain[20][38], entier score)
+DEBUT
+    entier i, j
+
+    VIDER Ecran     //On vide l'écran pour faire du image par image et donner un effet dynamique
+
+    Ecrire("Votre score est actuellement de " score "Deplacez vous a l'aide des touches z, q, s et d. Quittez avec Echap")
+
+    POUR(i=0 à i=19 par pas de 1)
+        POUR(j=0 à j=37 par pas de 1)
+            Ecrire(terrain[i][j]) //On affiche le terrain
+        FIN POUR
+
+
+    PAUSE(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
+FIN

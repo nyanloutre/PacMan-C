@@ -1,0 +1,18 @@
+vide triScore(tableau de chaine de charactère pseudo[100][4], tableau de 100 entier score[100], entier maxi)
+DEBUT
+    entier i, j, new_score
+    chaine de 4 charactère new_pseudo[4]
+    POUR (i=1 à maxi par pas de 1)
+        new_score <-- score[i]
+        strcpy(new_pseudo, pseudo[i])
+        j <-- i
+        TANT QUE (j > 0 ET score[j-1] > new_score)
+            score[j] <-- score[j-1];
+            strcpy(pseudo[j], pseudo[j-1]); // copie d'un chaine dans une autre
+            j <-- j-1
+        FIN TANT QUE
+        score[j] <-- new_score
+        strcpy(pseudo[j], new_pseudo)
+    FIN POUR
+    ECRIRE("Le meilleur score est ",score[maxi-1],"detenu par ",pseudo[maxi-1])
+FIN

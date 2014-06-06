@@ -1,0 +1,30 @@
+entier lectureScore(tableau de chaine de charactère pseudo[100][4], tableau de 100 entier score[100])
+{
+    FILE* sauv <-- NULL
+    sauv <-- fopen("score.txt", "r")
+
+    tableau de charactères lecture[4]
+    entier i <-- 0
+
+    SI (sauv != NULL)
+        ALORS
+            //execution du code dans le cas où il n'y a pas d'erreur
+            fseek(sauv, 0, SEEK_SET)    //on se place au début du fichier (on veux être sûr que c'est le cas)
+            TANT QUE (on est pas à la fin du fichier sauv)
+                fgets(lecture, 4, sauv)
+                strcpy(pseudo[i], lecture) //Il faut utiliser ça pour copier des chaines de caractère
+
+                fseek(sauv, 1, SEEK_CUR) // On passe l'espace
+
+                fgets(lecture, 4, sauv) //On lit le score
+                score[i] <-- atoi(lecture) //On convertit les charactère contenu par le tableau lecture en nombre
+
+                i <-- i+1
+            FIN TANT QUE
+            fclose(sauv) //fermeture fichier
+        SINON
+            ECRIRE("Erreur lors de l'ouverture du fichier pour lecture") //message d'erreur
+    FIN SI
+
+    Retourner (i-1)
+FIN

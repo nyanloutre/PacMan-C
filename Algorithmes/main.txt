@@ -1,0 +1,24 @@
+PROGRAMME PacMan
+Variables   tableau de caractère terrain [20][38]
+            S_coordonees PacMan
+            S_coordonees fantomeA
+            S_coordonees fantomeB
+            S_coordonees fantomeC
+            S_coordonees fantomeD
+
+DEBUT
+    SetWindow(39,25) //forcer une taille de la fenêtre dans le CMD
+
+    initialisation du générateur de nombre aléatoire
+
+    initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD)
+
+    renduarene(terrain)
+
+    affichage(terrain, 0)
+
+    deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD)
+
+    Ecrire("Appuyez sur une touche pour quitter");
+    Lire()
+FIN

@@ -1,0 +1,12 @@
+vide inscriptionScore(chaine de charactère name[],entier score)
+DEBUT
+    FILE* sauv <-- NULL
+    sauv <-- fopen("score.txt", "a")
+    SI (sauv != NULL)
+        ALORS                                        //execution du code dans le cas où il n'y a pas d'erreur
+            fprintf(sauv, "%s %d\n", name, score);     //ecriture du score dans le fichier
+            fclose(sauv)                             //fermeture du fichier
+        SINON   
+            Ecrire("Erreur lors de l'ouverture du fichier pour ecriture") // en cas d'erreurs
+    FIN SI
+FIN

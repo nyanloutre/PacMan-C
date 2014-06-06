@@ -1,0 +1,245 @@
+Vide initialisation(pointeur vers un tableau de 20 chaines de 38 caractères terrain, pointeur vers coordone coordPacMan, pointeur vers Coordone fantomeA, pointeur vers Coordone fantomeB, pointeur vers Coordone fantomeC, pointeur vers Coordone fantomeD)
+Variables : entier i, entier j
+Debut
+
+	//Pour avoir une idée de ce que génère cette fonction voir https://github.com/nyanloutre/PacMan-C/releases/tag/v0.1 (uniquement l'executable, le code source ne correspondant pas)
+
+    /*Le fonctionnement est le suivant
+
+        i correspond aux lignes
+        j correspond aux collonnes
+
+        Chaque test "dessine" une forme du terrain à l'aide de ses coordonnées
+
+    */
+    
+    Pour i allant de 1 à 19
+        Pour j allant de 1 à 37
+
+        //Remplissage de l'arene par des points
+
+            terrain[i][j] <-- '.'
+            
+        //Génération du pourtour
+
+            Si i = 0 OU j = 0 OU i = 19 OU j= 37
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+        //Petite barre au milieu
+
+            Si i < 5 ET j = 18
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+        //Rectangles
+            
+            //Première ligne de rectangle
+            
+            Si  i > 1 ET j > 1 ET i < 5 ET j < 8
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            Si  i > 1 ET j > 8 ET i < 5 ET j < 17
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            Si  i > 1 ET j > 19 ET i < 5 ET j < 28
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            Si  i > 1 ET j > 28 ET i < 5 ET j < 36
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            //Deuxieme ligne de rectangles
+            
+            Si  i > 5 ET j > 0 ET i < 8 ET j < 8
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+                
+                
+            Si  i > 5 ET j > 28 ET i < 8 ET j <= 37
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            //Troisieme ligne de rectangles
+            
+            Si  i > 8 ET j >= 0 ET i < 12 ET j < 8
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            Si  i > 8 ET j > 28 ET i < 12 ET j < 37
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            //Rectangle où les fantomes aparaissent
+
+            Si  i > 11 ET j > 13 ET i < 15 ET j < 23
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            //Il faut vider ce rectangle et laisser deux passages
+
+            Si  i = 13 ET j > 14 ET j < 22
+                
+                terrain[i][j] <-- '.'
+                
+            Fin Si
+
+            Si  (i = 12 ET j = 18) OU (i = 14 ET j = 17)
+                
+                terrain[i][j] <-- '.'
+                
+            Fin Si
+
+            //Quatrième ligne de rectangles
+
+            Si  i > 11 ET j > 10 ET i < 14 ET j < 13
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            Si  i > 11 ET j > 23 ET i < 14 ET j < 26
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            //Rectangle en bas au milieu
+
+            Si  i > 15 ET j > 13 ET i < 18 ET j < 23
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            //Rectangles du bas
+
+            Si  i > 16 ET j > 1 ET i < 19 ET j < 13
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+        // Différentes lignes
+
+            //Double T au milieu
+
+            Si  (i = 6 OU i = 10) ET j > 10 ET j < 26
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            Si  i > 6 ET i < 10 ET j = 18
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+        //Les T qui s'imbriquent dans le précédent
+
+            Si  i > 5 ET i < 10 ET (j = 9 OU j = 27)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            Si  i = 8 ET (j > 8 ET j < 17) OU (j > 19 ET j < 28)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+        //Différents traits dans la partie basse
+
+            //Cinq barres verticales
+            Si  i > 10 ET i < 14 ET (j = 9 OU j = 27)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            Si  i > 12 ET i < 16 ET j = 5
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si    
+
+            Si  i > 14 ET i < 18 ET (j = 7 OU j = 30)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+            
+            //Sept barres horizontales
+
+            Si  i = 13 ET (j > 1 ET j < 6) OU (j > 6 ET j < 10) OU (j > 28 ET j < 37)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+            Si  i = 15 ET (j > 0 ET j < 4) OU (j > 6 ET j < 13) OU (j > 23 ET j < 31) OU (j > 31 ET j < 37)
+                
+                terrain[i][j] <-- '#'
+                
+            Fin Si
+
+        Fin Pour
+    Fin Pour
+
+    //Initialisation PacMan
+
+        terrain[1][1] <-- 'C'
+        coordPacMan.i <-- 1
+        coordPacMan.j <-- 1
+    
+    //Initialisation des fantomes
+
+        terrain[13][15] <-- 'M'
+        fantomeA.i <-- 13
+        fantomeA.j <-- 15
+
+        terrain[13][17] <-- 'M'
+        fantomeB.i <-- 13
+        fantomeB.j <-- 17
+
+        terrain[13][19] <-- 'M'
+        fantomeC.i <-- 13
+        fantomeC.j <-- 19
+
+        terrain[13][21] <-- 'M'
+        fantomeD.i <-- 13
+        fantomeD.j <-- 21
+		
+		//Initialisation des bonus
+
+		terrain[18][1] <-- 'B';
+		terrain[1][36] <-- 'B';
+    
+Fin

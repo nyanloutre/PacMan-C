@@ -1,0 +1,173 @@
+//Le but de cette fonction est de remplacer les dièses initialements générés par des symboles plus esthétiques
+
+Fonction vide renduarene(pointeur vers un tableau de 20 chaines de 38 caractères terrain
+Variables : entiers i,j
+			tableau de 20 chaines de 38 caractères betterterrain //On crée une deuxième arène qui recevra les symboles
+
+
+    //On vide les rectangles, il est impératif de faire cela à part afin de ne pas impacter les autres cases
+    Pour allant de 0 à 19 par pas de 1
+    
+        Pour j allant de 0 à 37 par pas de 1
+        
+
+            Si terrain[i][j] ='#' ET terrain[i-1][j+1] ='#' ET terrain[i+1][j+1] ='#' ET terrain[i+1][j-1] ='#' ET terrain[i-1][j-1] ='#'
+            
+                terrain[i][j] <-- ' '
+                betterterrain[i][j] <-- ' '
+            
+			Fin si
+        
+		Fin pour
+	
+	Fin pour
+
+    Pour i allant de 0 à 19 par pas de 1
+    
+        Pour j allant de 0 à 37 par pas de 1
+        
+
+            Choisir parmis terrain[i][j]
+            
+            '#':
+
+
+                /* on verifie pour la courante ce qu'il y a à:
+                         en haut                    à droite              en bas                       à gauche
+                puis en fonction de ça, on remplace par le symbole correspondant*/
+
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- coin_hg
+                Fin Si
+
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- coin_hd
+                Fin Si
+
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- coin_bg
+                Fin Si
+
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- coin_bd
+                Fin Si
+
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- bar_hor
+                Fin Si
+
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- bar_ver
+                Fin Si
+
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- t_gau
+                Fin Si
+
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- t_hau
+                Fin Si
+
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- t_bas
+                Fin Si
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- t_dro
+                Fin
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- croix
+                Fin Si
+
+                //Les bouts de lignes cela sert aux cases qui se trouvent à la fin d'une ligne
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] = '#'
+                Alors
+                    betterterrain[i][j] <-- bar_hor
+                Fin Si
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] = '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- bar_hor
+                Fin Si
+                Si terrain[i-1][j] =/= '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] = '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- bar_ver
+                Fin Si
+                Si terrain[i-1][j] = '#' ET terrain[i][j+1] =/= '#' ET terrain[i+1][j] =/= '#' ET  terrain[i][j-1] =/= '#'
+                Alors
+                    betterterrain[i][j] <-- bar_ver
+                Fin Si
+
+
+                //Si la sélectionnée n'est pas un dièse, on ne fait rien
+
+            '.':
+
+                   betterterrain[i][j] <-- '.'
+
+
+            'C':
+
+                    betterterrain[i][j] <-- 'C'
+
+
+            'M':
+
+                    betterterrain[i][j] <-- 'M'
+
+            'B':
+
+                    betterterrain[i][j] <-- 'B'
+
+            Fin
+
+            /*Ces test servent à corriger un bug qui fait que quand on arrive
+              à la dernière d'une ligne d'un tableau et que l'on veut
+              lire la suivante (qui ne devrait pas exister en théorie
+              le programme lit la première de la ligne suivante*/
+
+            Si (j = 0 OU j = 37) ET (i =/= 0 ET i =/= 19)
+            Alors
+                betterterrain[i][j] <-- bar_ver
+            Fin Si
+            Si j = 0 ET i = 19
+            Alors
+                betterterrain[i][j] <-- coin_bg
+            Fin Si
+            Si j = 37 ET i = 0
+            Alors
+                betterterrain[i][j] <-- coin_hd
+            Fin Si
+            Si j = 0 ET (i = 6 OU i = 7 OU i = 9 OU i = 11 OU i = 15)
+            Alors
+                betterterrain[i][j] <-- t_dro
+            Fin Si
+            Si j = 37 ET (i = 6 OU i = 7 OU i = 9 OU i = 11 OU i = 13 OU i = 15)
+            Alors
+                betterterrain[i][j] <-- t_gau
+            Fin Si
+
+        Fin pour
+    Fin pour
+
+    //On remplace ensuite par le nouveau terrain, on ne peut pas le mettre dans la première boucle car cela fausserai les calculs.
+    Pour i allant de 0 à 19 par pas de 1
+    
+        Pour j allant de 0 à 39 par pas de 1
+        
+
+            terrain[i][j] <-- betterterrain[i][j]
+
+        Fin pour
+    Fin pour
+
+Fin
