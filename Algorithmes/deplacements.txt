@@ -1,7 +1,8 @@
 entier deplacements (tableau de 20 chaines de 38 caractères terrain, pointeur vers coordone coordPacMan, pointeur vers Coordone fantomeA, pointeur vers Coordone fantomeB, pointeur vers Coordone fantomeC, pointeur vers Coordone fantomeD)
 
 VARIABLES charactère entree, pointA <-- '.', pointB <-- '.', pointC <-- '.', pointD <-- '.'
-		entier score <-- 0, bonus <-- 0, frame <-- 0, c
+		  entiers score <-- 0, bonus <-- 0, frame <-- 0, c
+		  entiers directionA <-- 0, directionB <-- 0, directionC <-- 0, directionD <-- 0
 
 DEBUT
 
@@ -13,7 +14,7 @@ DEBUT
 
         CHOISIR entree parmi
 
-            'z':
+            's':
 
                 SI (terrain[coordPacMan.i + 1][coordPacMan.j]='.')
 
@@ -32,10 +33,25 @@ DEBUT
                             coordPacMan.i <-- coordPacMan.i + 1
                             terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
 
-                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M' ET non(bonus))
                             ALORS entree <-- 'Q'
-                            SINON Rien
-        
+								SINON SI(terrain[PacMan.i + 1][PacMan.j] = 'M' ET bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
+									ALORS
+									terrain[PacMan.i][PacMan.j] <-- ' ' //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
+									PacMan.i <-- PacMan.i + 1
+									score <-- score + 10
+									SINON SI(terrain[PacMan.i + 1][PacMan.j] = point) //Si la case est un bonus on active le bonus
+										ALORS
+										terrain[PacMan.i][PacMan.j] <-- ' '
+										PacMan.i <-- PacMan.i + 1
+										terrain[PacMan.i][PacMan.j] <-- 'C'
+										bonus <-- 1
+										SINON RIEN
+									FIN SI
+								FIN SI
+						FIN SI
+					FIN SI
+				FIN SI
             'q':
 
                 SI (terrain[coordPacMan.i][coordPacMan.j - 1]='.')
@@ -55,11 +71,25 @@ DEBUT
                             coordPacMan.j <-- coordPacMan.j - 1
                             terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
 
-                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                        SINON SI (terrain[coordPacMan.i][coordPacMan.j- 1]='M' ET non(bonus))
                             ALORS entree <-- 'Q'
-                            SINON Rien
+								SINON SI(terrain[PacMan.i][PacMan.j - 1] = 'M' ET bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
+									ALORS
+									terrain[PacMan.i][PacMan.j] <-- ' ' //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
+									PacMan.j <-- PacMan.j - 1
+									score <-- score + 10
+									SINON SI(terrain[PacMan.i][PacMan.j - 1] = point) //Si la case est un bonus on active le bonus
+										ALORS
+										terrain[PacMan.i][PacMan.j] <-- ' '
+										PacMan.j <-- PacMan.j - 1
+										terrain[PacMan.i][PacMan.j] <-- 'C'
+										bonus <-- 1
+										SINON RIEN
+									FIN SI
+								FIN SI
+						FIN SI
 
-            's':
+            'z':
 
                 SI (terrain[coordPacMan.i - 1][coordPacMan.j]='.')
 
@@ -78,9 +108,23 @@ DEBUT
                             coordPacMan.i <-- coordPacMan.i - 1
                             terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
 
-                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                        SINON SI (terrain[coordPacMan.i - 1][coordPacMan.j]='M' ET non(bonus))
                             ALORS entree <-- 'Q'
-                            SINON Rien
+								SINON SI(terrain[PacMan.i - 1][PacMan.j] = 'M' ET bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
+									ALORS
+									terrain[PacMan.i][PacMan.j] <-- ' ' //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
+									PacMan.i <-- PacMan.i - 1
+									score <-- score + 10
+									SINON SI(terrain[PacMan.i - 1][PacMan.j] = point) //Si la case est un bonus on active le bonus
+										ALORS
+										terrain[PacMan.i][PacMan.j] <-- ' '
+										PacMan.i <-- PacMan.i - 1
+										terrain[PacMan.i][PacMan.j] <-- 'C'
+										bonus <-- 1
+										SINON RIEN
+									FIN SI
+								FIN SI
+						FIN SI
             'd':
 
                 SI (terrain[coordPacMan.i][coordPacMan.j + 1]='.')
@@ -100,20 +144,109 @@ DEBUT
                             coordPacMan.j <-- coordPacMan.j + 1
                             terrain[coordPacMan.i][coordPacMan.j] <-- 'C'
 
-                        SINON SI (terrain[coordPacMan.i + 1][coordPacMan.j]='M')
+                        SINON SI (terrain[coordPacMan.i][coordPacMan.j + 1]='M' ET non(bonus))
                             ALORS entree <-- 'Q'
-                            SINON Rien
+								SINON SI(terrain[PacMan.i][PacMan.j + 1] = 'M' ET bonus) //Si c'est un fantôme et que le bonus est activé, PacMan mange le fantôme et gagne 10 points
+									ALORS
+									terrain[PacMan.i][PacMan.j] <-- ' ' //La réaparition de PacMan est gérée plus loin car il y a plusieurs fantômes et qu'il faut les gérer au cas par cas
+									PacMan.j <-- PacMan.j + 1
+									score <-- score + 10
+									SINON SI(terrain[PacMan.i][PacMan.j + 1] = point) //Si la case est un bonus on active le bonus
+										ALORS
+										terrain[PacMan.i][PacMan.j] <-- ' '
+										PacMan.j <-- PacMan.j + 1
+										terrain[PacMan.i][PacMan.j] <-- 'C'
+										bonus <-- 1
+										SINON RIEN
+									FIN SI
+								FIN SI
+						FIN SI
         SINON Rien
+		
+		
+		SI(PacMan.i = fantomeA.i && PacMan.j = fantomeA.j)
+        ALORS
+            terrain[fantomeA.i][fantomeA.j] <-- 'C'
+            fantomeA.i <-- 13
+            fantomeA.j <-- 15
+            pointA <-- ' '
+            terrain[fantomeA.i][fantomeA.j] <-- 'M'
+        FIN SI
+        SINON SI(PacMan.i = fantomeB.i && PacMan.j = fantomeB.j)
+        ALORS
+            terrain[fantomeB.i][fantomeB.j] <-- 'C'
+            fantomeB.i <-- 13
+            fantomeB.j <-- 17
+            pointB <-- ' '
+            terrain[fantomeB.i][fantomeB.j] <-- 'M'
+        FIN SI
+        SINON SI(PacMan.i = fantomeC.i && PacMan.j = fantomeC.j)
+        ALORS
+            terrain[fantomeC.i][fantomeC.j] <-- 'C'
+            fantomeC.i <-- 13
+            fantomeC.j <-- 19
+            pointC <-- ' '
+            terrain[fantomeC.i][fantomeC.j] <-- 'M'
+        FIN SI
+        SINON SI(PacMan.i = fantomeD.i && PacMan.j = fantomeD.j)
+        ALORS
+            terrain[fantomeD.i][fantomeD.j] <-- 'C'
+            fantomeD.i <-- 13
+            fantomeD.j <-- 21
+            pointD <-- ' '
+            terrain[fantomeD.i][fantomeD.j] <-- 'M'
+        FIN SI
+
+		//Deplacement des fantomes
+        directionA <-- ia(*PacMan, *fantomeA, terrain, directionA);
+        directionB <-- ia(*PacMan, *fantomeB, terrain, directionB);
+        directionC <-- ia(*PacMan, *fantomeC, terrain, directionC);
+        directionD <-- ia(*PacMan, *fantomeD, terrain, directionD);
+
 
         //Deplacement des fantomes
 
-        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeA, pointA, terrain, entree)
-        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeB, pointB, terrain, entree)
-        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeC, pointC, terrain, entree)
-        deplacementFantome(nombre aléatoire entre 1 et 4, fantomeD, pointD, terrain, entree)
+        pointA <-- deplacementFantome(directionA, fantomeA, pointA, terrain, &entree, bonus)
+        pointB <-- deplacementFantome(directionB, fantomeB, pointB, terrain, &entree, bonus)
+        pointC <-- deplacementFantome(directionC, fantomeC, pointC, terrain, &entree, bonus)
+        pointD <-- deplacementFantome(directionD, fantomeD, pointD, terrain, &entree, bonus)
+		
+        //On affiche la nouvelle frame ainsi générée
+        affichage(terrain, score, bonus, frame);
 
-    Tant que entree != 'Q'
+        //compteur de frame
+        SI(bonus)
+        ALORS
+            frame <-- frame + 1
+        FIN SI
+
+        //On réinitialise le bonus après 50 frames
+        SI(frame>50)
+        ALORS
+            bonus<--0
+            frame<--0
+        FIN SI
+
+
+
+    Tant que entree =/= 'Q'
 	
-	Retourner score
 	
-Fin
+    //On vide le buffer clavier car la fonction GetKeyState garde toutes les entrées en mémoire et les ressorts au getch suivant
+
+
+   FAIRE
+
+        textcolor(12)
+        ECRIRE(\n\n\n                              GAME OVER\n\n\n\n)
+        textcolor(15)
+        ECRIRE(Pour sauvegarder et afficher votre score appuyer sur la touche espace)
+        c <-- getch()
+        system("CLS)
+
+    } while (c =/= ' ') //On valide par espace
+
+    fscore(score)
+
+	
+FIN
