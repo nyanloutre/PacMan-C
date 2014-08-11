@@ -41,7 +41,7 @@ int main()
         case 1 :
             initialisation(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On génère l'arène
             renduarene(terrain); //On effectue un rendu sur l'arène précédement générée afin d'avoir un résultat plus joli
-            affichage(terrain, 0, 0, 0); //On affiche une première fois le terrain
+            affichage(terrain, 0, 0, 0, 3); //On affiche une première fois le terrain
             deplacements(terrain, &PacMan, &fantomeA, &fantomeB, &fantomeC, &fantomeD); //On lance la gestion des déplacements
             break;
 

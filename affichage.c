@@ -2,7 +2,7 @@
 #include "symboles.h"
 #include "conio.c"
 
-void affichage(char terrain[20][38], int score, int bonus, int frame)
+void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
 {
     int i, j;
 
@@ -47,6 +47,7 @@ void affichage(char terrain[20][38], int score, int bonus, int frame)
 
         textcolor(YELLOW);
         if(i==10){printf("        score : %d", score);};
+        if(i==12){printf("        vies : %d", vies);};
 
         printf("\n");
     }
