@@ -23,7 +23,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         //Le PacMan se déplace à l'aide des touches z,q,s et d. Le jeu peut être quitté avec Esc
 
-        affichage(terrain, score, bonus, frame);
+        affichage(terrain, score, bonus, frame, vies);
 
         entree = getch(); //Cette commande permet au jeu de ne pas démarer tout de suite, mais d'attendre que le joueur soit pret
 
@@ -254,7 +254,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             pointD = deplacementFantome(directionD, fantomeD, pointD, terrain, &entree, bonus);
 
             //On affiche la nouvelle frame ainsi générée
-            affichage(terrain, score, bonus, frame);
+            affichage(terrain, score, bonus, frame, vies);
 
             //compteur de frame
             if(bonus)
