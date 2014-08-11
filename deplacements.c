@@ -18,7 +18,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
     int vies;
 
 
-    for(vies = 4 ; vies > 0 ; vies--)
+    for(vies = 3 ; vies > 0 ; vies--)
     {
 
         //Le PacMan se déplace à l'aide des touches z,q,s et d. Le jeu peut être quitté avec Esc
@@ -268,6 +268,29 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
             }
 
         }while(entree != 'Q');
+
+        if(vies-1>0)
+        {
+            do {
+
+                textcolor(12);
+                printf("\n\n\n                              OUILLE !\n\n\n\n");
+                textcolor(15);
+                printf("Tu as perdu une vie, pour continuer appuye sur la touche espace");
+                if(vies>1)
+                {
+                    printf("\nIl te reste %d vies", vies-1);
+                }
+                else
+                {
+                    printf("\nIl te reste %d vie", vies-1);
+                }
+                c = getch();
+                system("CLS");
+
+            }while (c != ' '); //On valide par espace
+        }
+
 
     }
 
