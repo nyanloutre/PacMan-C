@@ -273,6 +273,9 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         if(vies-1>0)
         {
+
+            system("CLS");
+
             do {
 
                 textcolor(12);
@@ -291,6 +294,11 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
                 system("CLS");
 
             }while (c != ' '); //On valide par espace
+
+            terrain[PacMan->i][PacMan->j] = ' ';
+            terrain[1][1] = 'C';
+            PacMan->i = 1;
+            PacMan->j = 1;
         }
 
 
