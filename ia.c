@@ -20,7 +20,7 @@ int ia(coordonees pacman, coordonees fantome, char terrain[20][38], int olDirect
                 {
                     if (pacman.j-fantome.j<=0) //SI pacman à gauche
                     {
-                        //le pacman ce trouve en haut à gauche du fantôme
+                        //le pacman se trouve en haut à gauche du fantôme
                         if (pacman.i-fantome.i==0)//test pour savoir si le pacman est sur la même ligne que le fantôme
                         {
                             direction = 2;
