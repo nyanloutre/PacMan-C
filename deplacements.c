@@ -271,6 +271,7 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
     //On vide le buffer clavier car la fonction GetKeyState garde toutes les entrées en mémoire et les ressorts au getch suivant
 
+    system("CLS");
 
    do {
 
