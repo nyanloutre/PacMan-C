@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
-#include <conio.h>
 
 #include "initialisation.h"
 #include "deplacement.h"
@@ -29,9 +27,10 @@ int main()
     coordonees fantomeC;
     coordonees fantomeD;
 
-    SetWindow(70,26); //On redimentionne la fenêtre (c'est le seul réglage faisable automatiquement)
-
     srand(time(NULL)); //On initialise les nombres aléatoires
+
+    initscr();
+    start_color();
 
     do
     {
@@ -46,7 +45,7 @@ int main()
             break;
 
         case 2:
-            system("CLS");
+            clear();
             maxi = lectureScore(pseudo, score);
             triScore(pseudo, score, maxi);
             break;
