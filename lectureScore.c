@@ -31,7 +31,7 @@ int lectureScore(char pseudo[100][4], int score[100])
     }
     else
     {
-        printf("Erreur lors de l'ouverture du fichier pour lecture");
+        printw("Erreur lors de l'ouverture du fichier pour lecture");
     }
 
     return (i-1);

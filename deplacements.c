@@ -1,6 +1,4 @@
-#include <windows.h>
 #include <stdio.h>
-#include <conio.h>
 
 #include "structures.h"
 #include "score.h"
@@ -25,34 +23,34 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
         affichage(terrain, score, bonus, frame, vies);
 
-        entree = getch(); //Cette commande permet au jeu de ne pas démarer tout de suite, mais d'attendre que le joueur soit pret
+         //Cette commande permet au jeu de ne pas démarer tout de suite, mais d'attendre que le joueur soit pret
 
         do
         {
 
-            /*On récupère les entrées au clavier grace à la fonction GetKeyState qui est dans windows.h
-              Les tests empèchent le joueur de diriger PacMan vers un mur (cela ralentirai le jeu)*/
-            if(GetKeyState(0x5A) < 0 && (terrain[PacMan->i - 1][PacMan->j] == ' ' || terrain[PacMan->i - 1][PacMan->j] == '.' || terrain[PacMan->i - 1][PacMan->j] == 'M'))
+            entree = getch();
+
+            if(entree == 'z' && (terrain[PacMan->i - 1][PacMan->j] == ' ' || terrain[PacMan->i - 1][PacMan->j] == '.' || terrain[PacMan->i - 1][PacMan->j] == 'M'))
             {
                 entree = 'z';
             }
 
-            if(GetKeyState(0x51) < 0 && (terrain[PacMan->i][PacMan->j - 1] == ' ' || terrain[PacMan->i][PacMan->j - 1] == '.' || terrain[PacMan->i][PacMan->j - 1] == 'M'))
+            if(entree == 'q' && (terrain[PacMan->i][PacMan->j - 1] == ' ' || terrain[PacMan->i][PacMan->j - 1] == '.' || terrain[PacMan->i][PacMan->j - 1] == 'M'))
             {
                 entree = 'q';
             }
 
-            if(GetKeyState(0x53) < 0 && (terrain[PacMan->i + 1][PacMan->j] == ' ' || terrain[PacMan->i + 1][PacMan->j] == '.' || terrain[PacMan->i + 1][PacMan->j] == 'M'))
+            if(entree == 's' && (terrain[PacMan->i + 1][PacMan->j] == ' ' || terrain[PacMan->i + 1][PacMan->j] == '.' || terrain[PacMan->i + 1][PacMan->j] == 'M'))
             {
                 entree = 's';
             }
 
-            if(GetKeyState(0x44) < 0 && (terrain[PacMan->i][PacMan->j + 1] == ' ' || terrain[PacMan->i][PacMan->j + 1] == '.' || terrain[PacMan->i][PacMan->j + 1] == 'M'))
+            if(entree == 'd' && (terrain[PacMan->i][PacMan->j + 1] == ' ' || terrain[PacMan->i][PacMan->j + 1] == '.' || terrain[PacMan->i][PacMan->j + 1] == 'M'))
             {
                 entree = 'd';
             }
 
-            if(GetKeyState(VK_ESCAPE) < 0)
+            if(entree == 'Q')
             {
                 entree = 'Q';
             }
@@ -274,21 +272,21 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
         if(vies-1>0)
         {
 
-            system("CLS");
+            clear();
 
             do {
 
-                textcolor(12);
-                printf("\n\n\n                              OUILLE !\n\n\n\n");
-                textcolor(15);
-                printf("Tu as perdu une vie, pour continuer appuye sur la touche espace");
+                attron(COLOR_PAIR(5)); //rouge
+                printw("\n\n\n                              OUILLE !\n\n\n\n");
+                attron(COLOR_PAIR(1)); //blanc
+                printw("Tu as perdu une vie, pour continuer appuye sur la touche espace");
                 if(vies>1)
                 {
-                    printf("\nIl te reste %d vies", vies-1);
+                    printw("\nIl te reste %d vies", vies-1);
                 }
                 else
                 {
-                    printf("\nIl te reste %d vie", vies-1);
+                    printw("\nIl te reste %d vie", vies-1);
                 }
                 c = getch();
                 system("CLS");
@@ -312,12 +310,12 @@ void deplacements(char terrain[20][38], coordonees *PacMan, coordonees *fantomeA
 
     do {
 
-        textcolor(12);
-        printf("\n\n\n                              GAME OVER\n\n\n\n");
-        textcolor(15);
-        printf("Pour sauvegarder et afficher votre score appuyer sur la touche espace");
+        attron(COLOR_PAIR(5)); //rouge
+        printw("\n\n\n                              GAME OVER\n\n\n\n");
+        attron(COLOR_PAIR(1)); //blanc
+        printw("Pour sauvegarder et afficher votre score appuyer sur la touche espace");
         c = getch();
-        system("CLS");
+        clear();
 
     } while (c != ' '); //On valide par espace
 

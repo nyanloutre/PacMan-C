@@ -6,12 +6,6 @@ void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
 
     clear(); //On vide l'écran entre chaque frame
 
-    init_pair(1, COLOR_WHITE, COLOR_BLACK); //Initialisation de la couleur blanche
-    init_pair(2, COLOR_YELLOW, COLOR_BLACK); //Initialisation de la couleur jaune
-    init_pair(3, COLOR_GREEN, COLOR_BLACK); //Initialisation de la couleur verts
-    init_pair(4, COLOR_BLUE, COLOR_BLACK); //Initialisation de la couleur bleue
-    init_pair(5, COLOR_RED, COLOR_BLACK); //Initialisation de la couleur rouge
-
     attron(COLOR_PAIR(1)); //Affichage avec la couleur blanche
     printw("Deplacez vous a l'aide des touches z, q, s et d.\nTentez d'attraper les %c\nQuittez avec Echap\n", point);
 
@@ -67,5 +61,5 @@ void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
 
     refresh();
 
-    Sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
+    sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
 }

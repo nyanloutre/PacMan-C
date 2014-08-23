@@ -15,7 +15,7 @@ void fscore(int scorePlayer)
     char name[12];
     char pseudo[100][4];
 
-    printf("Votre Pseudo (3 caracteres): ");
+    printw("Votre Pseudo (3 caracteres): ");
     //Saisie du pseudo
     do
     {
@@ -30,7 +30,7 @@ void fscore(int scorePlayer)
     }
 
 
-    printf("\n\nVotre score est: %d\n\n", scorePlayer);
+    printw("\n\nVotre score est: %d\n\n", scorePlayer);
     inscriptionScore(name, scorePlayer);    //Inscription du score dans le fichier .txt
     maxi = lectureScore(pseudo, score);     //
     triScore(pseudo, score, maxi);

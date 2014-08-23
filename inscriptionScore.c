@@ -13,6 +13,6 @@ void inscriptionScore(char name[],int score)
     }
     else
     {
-        printf("Erreur lors de l'ouverture du fichier pour ecriture");
+        printw("Erreur lors de l'ouverture du fichier pour ecriture");
     }
 }

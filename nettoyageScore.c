@@ -11,12 +11,12 @@ void nettoyageScore(char pseudo[100][4], int score[100], int maxi)
     {
         for (i=maxi-1; i>maxi-11; i--)
         {
-            fprintf(fichier, "%s %d\n", pseudo[i], score[i]);
+            fprintw(fichier, "%s %d\n", pseudo[i], score[i]);
         }
         fclose(fichier);
     }
     else
     {
-        printf("Erreur lors de l'ouverture/suppression du contenu du fichier score\n");
+        printw("Erreur lors de l'ouverture/suppression du contenu du fichier score\n");
     }
 }

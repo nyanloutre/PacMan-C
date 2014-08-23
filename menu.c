@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 void menu(int *entree)
 {
@@ -8,117 +7,117 @@ void menu(int *entree)
 
     system("CLS");
 
-    printf("\n");
+    printw("\n");
 
     textcolor(14);
-    printf(" /$$$$$$$   ");
+    printw(" /$$$$$$$   ");
     textcolor(9);
-    printf("/$$$$$$   ");
+    printw("/$$$$$$   ");
     textcolor(12);
-    printf("/$$$$$$        ");
+    printw("/$$$$$$        ");
     textcolor(11);
-    printf("/$$      /$$  ");
+    printw("/$$      /$$  ");
     textcolor(10);
-    printf("/$$$$$$  ");
+    printw("/$$$$$$  ");
     textcolor(14);
-    printf("/$$   /$$\n");
+    printw("/$$   /$$\n");
 
 
-    printf("| $$__  $$ ");
+    printw("| $$__  $$ ");
     textcolor(9);
-    printf("/$$__  $$ ");
+    printw("/$$__  $$ ");
     textcolor(12);
-    printf("/$$__  $$      ");
+    printw("/$$__  $$      ");
     textcolor(11);
-    printf("| $$$    /$$$");
+    printw("| $$$    /$$$");
     textcolor(10);
-    printf(" /$$__  $$");
+    printw(" /$$__  $$");
     textcolor(14);
-    printf("| $$$ | $$\n");
+    printw("| $$$ | $$\n");
 
 
-    printf("| $$  \\ $$");
+    printw("| $$  \\ $$");
     textcolor(9);
-    printf("| $$  \\ $$");
+    printw("| $$  \\ $$");
     textcolor(12);
-    printf("| $$  \\__/      ");
+    printw("| $$  \\__/      ");
     textcolor(11);
-    printf("| $$$$  /$$$$");
+    printw("| $$$$  /$$$$");
     textcolor(10);
-    printf("| $$  \\ $$");
+    printw("| $$  \\ $$");
     textcolor(14);
-    printf("| $$$$| $$\n");
+    printw("| $$$$| $$\n");
 
 
-    printf("| $$$$$$$/");
+    printw("| $$$$$$$/");
     textcolor(9);
-    printf("| $$$$$$$$");
+    printw("| $$$$$$$$");
     textcolor(12);
-    printf("| $$            ");
+    printw("| $$            ");
     textcolor(11);
-    printf("| $$ $$/$$ $$");
+    printw("| $$ $$/$$ $$");
     textcolor(10);
-    printf("| $$$$$$$$");
+    printw("| $$$$$$$$");
     textcolor(14);
-    printf("| $$ $$ $$\n");
+    printw("| $$ $$ $$\n");
 
 
-    printf("| $$____/ ");
+    printw("| $$____/ ");
     textcolor(9);
-    printf("| $$__  $$");
+    printw("| $$__  $$");
     textcolor(12);
-    printf("| $$            ");
+    printw("| $$            ");
     textcolor(11);
-    printf("| $$  $$$| $$");
+    printw("| $$  $$$| $$");
     textcolor(10);
-    printf("| $$__  $$");
+    printw("| $$__  $$");
     textcolor(14);
-    printf("| $$  $$$$\n");
+    printw("| $$  $$$$\n");
 
-    printf("| $$      ");
+    printw("| $$      ");
     textcolor(9);
-    printf("| $$  | $$");
+    printw("| $$  | $$");
     textcolor(12);
-    printf("| $$    $$      ");
+    printw("| $$    $$      ");
     textcolor(11);
-    printf("| $$\\  $ | $$");
+    printw("| $$\\  $ | $$");
     textcolor(10);
-    printf("| $$  | $$");
+    printw("| $$  | $$");
     textcolor(14);
-    printf("| $$\\  $$$\n");
+    printw("| $$\\  $$$\n");
 
-    printf("| $$      ");
+    printw("| $$      ");
     textcolor(9);
-    printf("| $$  | $$");
+    printw("| $$  | $$");
     textcolor(12);
-    printf("|  $$$$$$/      ");
+    printw("|  $$$$$$/      ");
     textcolor(11);
-    printf("| $$ \\/  | $$");
+    printw("| $$ \\/  | $$");
     textcolor(10);
-    printf("| $$  | $$");
+    printw("| $$  | $$");
     textcolor(14);
-    printf("| $$ \\  $$\n");
+    printw("| $$ \\  $$\n");
 
-    printf("|__/      ");
+    printw("|__/      ");
     textcolor(9);
-    printf("|__/  |__/ ");
+    printw("|__/  |__/ ");
     textcolor(12);
-    printf("\\______/       ");
+    printw("\\______/       ");
     textcolor(11);
-    printf("|__/     |__/");
+    printw("|__/     |__/");
     textcolor(10);
-    printf("|__/  |__/");
+    printw("|__/  |__/");
     textcolor(14);
-    printf("|__/  \\__/\n");
+    printw("|__/  \\__/\n");
 
     textcolor(15);
-    printf("                                       Par Paul TREHIOU et Victor SENE\n");
+    printw("                                       Par Paul TREHIOU et Victor SENE\n");
 
-    printf("\n\n\n");
+    printw("\n\n\n");
     textcolor(14);
-    printf("                          1.JOUER\n\n");
-    printf("                          2.MEILLEURS SCORES\n\n");
-    printf("                          3.QUITTER\n\n");
+    printw("                          1.JOUER\n\n");
+    printw("                          2.MEILLEURS SCORES\n\n");
+    printw("                          3.QUITTER\n\n");
 
     do
     {

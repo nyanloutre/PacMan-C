@@ -33,6 +33,13 @@ int main()
     initscr();
     start_color();
 
+    init_pair(1, COLOR_WHITE, COLOR_BLACK); //Initialisation de la couleur blanche
+    init_pair(2, COLOR_YELLOW, COLOR_BLACK); //Initialisation de la couleur jaune
+    init_pair(3, COLOR_GREEN, COLOR_BLACK); //Initialisation de la couleur verts
+    init_pair(4, COLOR_BLUE, COLOR_BLACK); //Initialisation de la couleur bleue
+    init_pair(5, COLOR_RED, COLOR_BLACK); //Initialisation de la couleur rouge
+
+
     do
     {
         menu(&mode);
