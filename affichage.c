@@ -39,7 +39,7 @@ void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
                 attron(COLOR_PAIR(4)); //bleu
             }
 
-            printw("%c", terrain[i][j]); //On affiche le terrain
+            addch(terrain[i][j]); //On affiche le terrain
 
         }
 
