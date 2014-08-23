@@ -19,7 +19,7 @@ void fscore(int scorePlayer)
     //Saisie du pseudo
     do
     {
-        gets(name);
+        fgets(name, 3, stdin);
 
     }while (strlen(name)!=3);
 

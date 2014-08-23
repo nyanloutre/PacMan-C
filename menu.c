@@ -9,112 +9,112 @@ void menu(int *entree)
 
     printw("\n");
 
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw(" /$$$$$$$   ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("/$$$$$$   ");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("/$$$$$$        ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("/$$      /$$  ");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("/$$$$$$  ");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("/$$   /$$\n");
 
 
     printw("| $$__  $$ ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("/$$__  $$ ");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("/$$__  $$      ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$$    /$$$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw(" /$$__  $$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$$ | $$\n");
 
 
     printw("| $$  \\ $$");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$  \\ $$");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("| $$  \\__/      ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$$$  /$$$$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("| $$  \\ $$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$$$| $$\n");
 
 
     printw("| $$$$$$$/");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$$$$$$$");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("| $$            ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$ $$/$$ $$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("| $$$$$$$$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$ $$ $$\n");
 
 
     printw("| $$____/ ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$__  $$");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("| $$            ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$  $$$| $$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("| $$__  $$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$  $$$$\n");
 
     printw("| $$      ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$  | $$");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("| $$    $$      ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$\\  $ | $$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("| $$  | $$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$\\  $$$\n");
 
     printw("| $$      ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$  | $$");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("|  $$$$$$/      ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("| $$ \\/  | $$");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("| $$  | $$");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("| $$ \\  $$\n");
 
     printw("|__/      ");
-    textcolor(9);
+    attron(COLOR_PAIR(4)); //bleu
     printw("|__/  |__/ ");
-    textcolor(12);
+    attron(COLOR_PAIR(5)); //rouge
     printw("\\______/       ");
-    textcolor(11);
+    attron(COLOR_PAIR(4)); //bleu
     printw("|__/     |__/");
-    textcolor(10);
+    attron(COLOR_PAIR(3)); //vert
     printw("|__/  |__/");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("|__/  \\__/\n");
 
-    textcolor(15);
+    attron(COLOR_PAIR(1)); //blanc
     printw("                                       Par Paul TREHIOU et Victor SENE\n");
 
     printw("\n\n\n");
-    textcolor(14);
+    attron(COLOR_PAIR(2)); //jaune
     printw("                          1.JOUER\n\n");
     printw("                          2.MEILLEURS SCORES\n\n");
     printw("                          3.QUITTER\n\n");
