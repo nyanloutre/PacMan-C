@@ -1,15 +1,20 @@
-#include <windows.h>
+#include <ncurses.h>
 #include "symboles.h"
-#include "conio.c"
 
 void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
 {
     int i, j;
 
-    system("CLS"); //On vide l'écran entre chaque frame
+    clear(); //On vide l'écran entre chaque frame
 
-    textcolor(WHITE);
-    printf("Deplacez vous a l'aide des touches z, q, s et d.\nTentez d'attraper les %c\nQuittez avec Echap\n", point);
+    init_pair(1, COLOR_WHITE, COLOR_BLACK); //Initialisation de la couleur blanche
+    init_pair(2, COLOR_YELLOW, COLOR_BLACK); //Initialisation de la couleur jaune
+    init_pair(3, COLOR_GREEN, COLOR_BLACK); //Initialisation de la couleur verts
+    init_pair(4, COLOR_BLUE, COLOR_BLACK); //Initialisation de la couleur bleue
+    init_pair(5, COLOR_RED, COLOR_BLACK); //Initialisation de la couleur rouge
+
+    attron(COLOR_PAIR(1)); //Affichage avec la couleur blanche
+    printw("Deplacez vous a l'aide des touches z, q, s et d.\nTentez d'attraper les %c\nQuittez avec Echap\n", point);
 
     for(i=0; i<20; i++)
     {
@@ -18,48 +23,50 @@ void affichage(char terrain[20][38], int score, int bonus, int frame, int vies)
 
             if(terrain[i][j] == 'C')
             {
-                textcolor(YELLOW);
+                attron(COLOR_PAIR(2)); //jaune
             }
             else if(terrain[i][j] == 'M')
             {
-                textcolor(LIGHTRED);
+                attron(COLOR_PAIR(5)); //rouge
                 if(bonus && (frame<35 || frame%2))
                 {
-                    textcolor(LIGHTGREEN);
+                    attron(COLOR_PAIR(3)); //vert
                 }
             }
             else if(terrain[i][j] == '.')
             {
-                textcolor(WHITE);
+                attron(COLOR_PAIR(1)); //blanc
             }
             else if(terrain[i][j] == point)
             {
-                textcolor(LIGHTGREEN);
+                attron(COLOR_PAIR(3)); //vert
             }
             else
             {
-                textcolor(LIGHTBLUE);
+                attron(COLOR_PAIR(4)); //bleu
             }
 
-            printf("%c", terrain[i][j]); //On affiche le terrain
+            printw("%c", terrain[i][j]); //On affiche le terrain
 
         }
 
-        textcolor(YELLOW);
-        if(i==10){printf("        score : %d", score);};
-        if(i==12){printf("        vies : %d", vies);};
+        attron(COLOR_PAIR(2)); //jaune
+        if(i==10){printw("        score : %d", score);};
+        if(i==12){printw("        vies : %d", vies);};
 
-        printf("\n");
+        printw("\n");
     }
 
-    textcolor(LIGHTGREEN);
+    attron(COLOR_PAIR(3)); //vert
 
     if(bonus)
     {
-        printf("========== BONUS ACTIVE %d ==========", 50 - frame);
+        printw("========== BONUS ACTIVE %d ==========", 50 - frame);
     }
 
-    textcolor(WHITE);
+    attron(COLOR_PAIR(1)); //blanc
+
+    refresh();
 
     Sleep(200); //On fait une pause entre chaque frame pour contrôler la vitesse du jeu
 }
