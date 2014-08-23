@@ -85,9 +85,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="score.h" />
-		<Unit filename="setwindow.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="setwindow.h" />
 		<Unit filename="structures.h" />
 		<Unit filename="symboles.h" />
